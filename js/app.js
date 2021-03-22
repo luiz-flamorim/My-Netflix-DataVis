@@ -1,18 +1,30 @@
-const genreList = getGenres()
+const csv = require('csv-parser')
+const fs = require('fs')
+const results = []
 
-d3.csv("/data/NetflixViewingHistory.csv")
-    .then(data =>
+fs.createReadStream('/Users/luizamorim/Desktop/NetflixII/data/NetflixViewingHistory.csv')
+    .pipe(csv({}))
+    .on('data', (data) => results.push(data))
+    .on('end', () =>
+        // console.log('csv parsed')
+        newDataset(results)
+    )
 
-        console.log(newDataset(data))
-        // console.log(data)
-        // console.log(getGenres(28))
-    );
+
+//CLIENT side - working fine
+// const filmData = d3.csv("/data/NetflixViewingHistory.csv")
+//     .then(data =>
+//          newDataset(data) 
+//     );
+//     console.log(filmData);
 
 async function newDataset(d) {
     let dataset = []
     try {
-        // for (let i = 0; i < d.length; i++) {
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < d.length; i++) {
+            let genreMap = new Map()
+            const genreList = await getGenres()
+            genreList.forEach((item) => genreMap.set(item.id, item.name))
 
             const splitted = splitNetflixData(d[i].Title)
             const title = splitted[0];
@@ -31,19 +43,28 @@ async function newDataset(d) {
                 apiResponse = await getApi('movie', title)
                 const overview = await apiResponse.overview
                 const poster = 'https://image.tmdb.org/t/p/w200/' + await apiResponse.poster_path
+
                 let genre = await apiResponse.genre_ids
+                for (let i = 0; i < genre.length; i++) {
+                    genre[i] = genreMap.get(genre[i])
+                }
+
                 const language = await apiResponse.original_language
                 let type = 'film'
                 dataset.push(new film(title, chapter, date, type, overview, poster, genre, language))
             } else {
                 const overview = await apiResponse.overview
-                let poster = 'https://image.tmdb.org/t/p/w200/' + await apiResponse.poster_path
+                const poster = 'https://image.tmdb.org/t/p/w200/' + await apiResponse.poster_path
+
                 let genre = await apiResponse.genre_ids
+                for (let i = 0; i < genre.length; i++) {
+                    genre[i] = genreMap.get(genre[i])
+                }
+
                 const language = await apiResponse.original_language
                 let type = 'series'
                 dataset.push(new film(title, chapter, date, type, overview, poster, genre, language))
             }
-
         }
         return dataset
     } catch (error) {
@@ -99,14 +120,20 @@ async function getApi(type, d) {
 
 async function getGenres() {
     try {
-        const url = `https://api.themoviedb.org/3/genre/movie/list?${apikey}`
-        const genreList = await fetch(url)
+        const films = `https://api.themoviedb.org/3/genre/movie/list?${apikey}`
+        const series = `https://api.themoviedb.org/3/genre/tv/list?${apikey}`
+        const filmsGenre = await fetch(films)
             .then(res => res.json())
             .then(data => {
                 return data.genres
             })
-        return genreList
-
+        const seriesGenre = await fetch(series)
+            .then(res => res.json())
+            .then(data => {
+                return data.genres
+            })
+        const allGenres = filmsGenre.concat(seriesGenre)
+        return allGenres
     } catch (error) {
         console.log(error)
     }
