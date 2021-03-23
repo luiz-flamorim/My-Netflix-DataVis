@@ -9,18 +9,20 @@ I started with a simple CSV any Neflix user can download from their profile. The
 ## Contributors
 My mentor is [Christina Levengood](https://lvngd.com), an amazing software developer who has helped me with this code.
 
-# Client and Node
+## Client and Node
 In the app.js you will notice some duplications and comments about the Client and Node. I decided to generate an JSON from my data, instead of loading the data and running the API, hence I used Node. Although it might be a case of using the same code with a smaler dataset to the client side only.
 
 On the Node, you will need to install some modules from npm, and require them, and also use a method to avoid Type Errors:
 
-```python
+```javascript
+
 //requests
 const csv = require('csv-parser')
 const fs = require('fs')
 const fetch = require("node-fetch");
+
 // module for the URL requests:
-encodeURI(
+encodeURI()
 ```
 
 ## License
