@@ -1,17 +1,17 @@
+// activate this block to work on Node
 const csv = require('csv-parser')
 const fs = require('fs')
+const fetch = require("node-fetch");
 const results = []
-
-fs.createReadStream('/Users/luizamorim/Desktop/NetflixII/data/NetflixViewingHistory.csv')
+var apikey = //API key here
+    fs.createReadStream('/Users/luizamorim/Desktop/NetflixII/data/NetflixViewingHistory.csv')
     .pipe(csv({}))
     .on('data', (data) => results.push(data))
     .on('end', () =>
-        // console.log('csv parsed')
         newDataset(results)
     )
 
-
-//CLIENT side - working fine
+//activate this block to use on the CLIENT
 // const filmData = d3.csv("/data/NetflixViewingHistory.csv")
 //     .then(data =>
 //          newDataset(data) 
@@ -24,6 +24,7 @@ async function newDataset(d) {
         for (let i = 0; i < d.length; i++) {
             let genreMap = new Map()
             const genreList = await getGenres()
+
             genreList.forEach((item) => genreMap.set(item.id, item.name))
 
             const splitted = splitNetflixData(d[i].Title)
@@ -66,6 +67,10 @@ async function newDataset(d) {
                 dataset.push(new film(title, chapter, date, type, overview, poster, genre, language))
             }
         }
+
+        // activate this block to work on Node
+        fs.writeFileSync('./results.json', JSON.stringify(dataset, null, '\t'));
+
         return dataset
     } catch (error) {
         console.log('Error: ' + error)
@@ -106,7 +111,10 @@ function checkChapter(d) {
 async function getApi(type, d) {
     let searchType = type
     try {
-        const url = `https://api.themoviedb.org/3/search/${searchType}?${apikey}&query=${d}`
+        // const url = `https://api.themoviedb.org/3/search/${searchType}?${apikey}&query=${d}`
+        
+        // Use the encodeURI to use Node
+        const url = encodeURI(`https://api.themoviedb.org/3/search/${searchType}?${apikey}&query=${d}`)
         const getUrl = await fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -120,8 +128,12 @@ async function getApi(type, d) {
 
 async function getGenres() {
     try {
-        const films = `https://api.themoviedb.org/3/genre/movie/list?${apikey}`
-        const series = `https://api.themoviedb.org/3/genre/tv/list?${apikey}`
+        // const films = `https://api.themoviedb.org/3/genre/movie/list?${apikey}`
+        // const series = `https://api.themoviedb.org/3/genre/tv/list?${apikey}` 
+        
+        // Use the encodeURI to use Node
+        const films = encodeURI(`https://api.themoviedb.org/3/genre/movie/list?${apikey}`)
+        const series = encodeURI(`https://api.themoviedb.org/3/genre/tv/list?${apikey}`)
         const filmsGenre = await fetch(films)
             .then(res => res.json())
             .then(data => {
