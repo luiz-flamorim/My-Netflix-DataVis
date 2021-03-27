@@ -20,12 +20,13 @@ var apikey = //API key here
 
 async function newDataset(d) {
     let dataset = []
+    
+    let genreMap = new Map()
+    const genreList = await getGenres()
+    genreList.forEach((item) => genreMap.set(item.id, item.name))
+
     try {
         for (let i = 0; i < d.length; i++) {
-            let genreMap = new Map()
-            const genreList = await getGenres()
-
-            genreList.forEach((item) => genreMap.set(item.id, item.name))
 
             const splitted = splitNetflixData(d[i].Title)
             const title = splitted[0];
