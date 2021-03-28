@@ -1,4 +1,5 @@
-[{
+[
+	{
 		"title": "The IT Crowd",
 		"chapter": "Bad Boys",
 		"date": "3/15/21",
@@ -113,7 +114,9 @@
 		"type": "series",
 		"overview": "In the context of information and media warfare, the series revolves around an exciting thriller, and its impact on people's daily lives.",
 		"poster": "https://image.tmdb.org/t/p/w200//6A4vj2dTL0vdYe0cmIJtEJbklkm.jpg",
-		"genre": [],
+		"genre": [
+			"Not available"
+		],
 		"language": "ar"
 	},
 	{
@@ -171,7 +174,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -205,7 +210,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -239,7 +246,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -275,7 +284,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -350,7 +361,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -452,7 +465,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -605,7 +620,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -615,7 +632,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -678,7 +697,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -885,7 +906,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -909,7 +932,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -932,7 +957,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -942,7 +969,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -1106,7 +1135,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -1128,7 +1159,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -1313,7 +1346,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -1323,7 +1358,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -1370,7 +1407,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -2159,13 +2198,12 @@
 		"chapter": "null",
 		"date": "7/28/20",
 		"type": "series",
-		"overview": "A Tokyo business man returns to his home country of Mexico where he must battle rivals to replace his grandfather as the head of a cartel.",
-		"poster": "https://image.tmdb.org/t/p/w200//1eKrOjS7OSOjgmEIdCNmKEEItKJ.jpg",
+		"overview": "The series begins twelve years after Goku is seen leaving on Shenron not at the end of Dragon Ball GT, and diverges entirely into its own plot from there, on an alternate timeline from the one which shows Goku Jr. fighting Vegeta Jr. at the World Martial Arts Tournament. In this series, Majuub has reached new levels of power, and has honed the techniques taught to him by Goku. We also see Gotenks finally mature, and Vegeta more powerful than ever.Each character will bring forth their own set of capabilities and purpose, winning fights and being relevant, in order to create an environment that emphasizes teamwork as well as individual worth for each character. In this series, the main set of villains are Saiyans, with abilities highly similar to the Saiyans that we are familiar with. These new Saiyans are more powerful than any threat the Z Fighters have ever faced, but after twelve years of intensive training, our heroes will not be easily defeated .",
+		"poster": "https://image.tmdb.org/t/p/w200//xs1BRXnY5kStzwdxyrl2HYJOJCq.jpg",
 		"genre": [
-			"Drama",
-			"Action & Adventure"
+			"Not available"
 		],
-		"language": "es"
+		"language": "en"
 	},
 	{
 		"title": "Cursed",
@@ -2213,7 +2251,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -2235,7 +2275,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -2303,10 +2345,9 @@
 		"chapter": "null",
 		"date": "07/11/2020",
 		"type": "series",
-		"overview": "Robert McCall is a former agent of a secret government agency who is now running his own private crime fighting operation where he fashions himself as \"The Equalizer.\" It is a service for victims of the system who have exhausted all possible means of seeking justice and have nowhere to go. McCall promises to even out the odds for them.",
-		"poster": "https://image.tmdb.org/t/p/w200//he4X6Ca0KUPOfkIwFshR9JcPs3p.jpg",
+		"overview": "Robyn McCall, an enigmatic former CIA operative with a mysterious background, uses her extensive skills to help those with nowhere else to turn.",
+		"poster": "https://image.tmdb.org/t/p/w200//gAgShytJMWSYkjxa7ZDjSZhsnlc.jpg",
 		"genre": [
-			"Action & Adventure",
 			"Crime",
 			"Drama"
 		],
@@ -2377,7 +2418,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -2387,7 +2430,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -2465,7 +2510,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -2514,7 +2561,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -2600,7 +2649,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -2691,7 +2742,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -2713,7 +2766,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -3255,7 +3310,9 @@
 		"type": "series",
 		"overview": "A documentary series about the paranormal, hosted by Darryll Walsh, a ghost hunter, best-selling author and doctor of parapsychology.",
 		"poster": "https://image.tmdb.org/t/p/w200/null",
-		"genre": [],
+		"genre": [
+			"Not available"
+		],
 		"language": "en"
 	},
 	{
@@ -3746,7 +3803,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -3769,7 +3828,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -3779,7 +3840,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -4037,7 +4100,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -4047,7 +4112,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -4057,7 +4124,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -4107,7 +4176,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -4179,7 +4250,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -4189,7 +4262,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -4260,7 +4335,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -4283,7 +4360,9 @@
 		"type": "series",
 		"overview": "A television spin-off of the 'Kingsman' Franchise'.",
 		"poster": "https://image.tmdb.org/t/p/w200/null",
-		"genre": [],
+		"genre": [
+			"Not available"
+		],
 		"language": "en"
 	},
 	{
@@ -4722,7 +4801,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -5400,7 +5481,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -5423,7 +5506,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -5433,7 +5518,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -5598,7 +5685,9 @@
 		"type": "series",
 		"overview": "A music show where hip hop artists compete with performances, and the winner gets to collaborate with a global artist to take on the Billboard charts.",
 		"poster": "https://image.tmdb.org/t/p/w200//lqaSwgcqs9wkQSzi6XdVQ56gxkq.jpg",
-		"genre": [],
+		"genre": [
+			"Not available"
+		],
 		"language": "ko"
 	},
 	{
@@ -5738,7 +5827,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -5761,7 +5852,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -5870,7 +5963,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -6013,7 +6108,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -6816,7 +6913,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -7073,7 +7172,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -7504,7 +7605,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -7562,7 +7665,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -8075,7 +8180,9 @@
 		"type": "series",
 		"overview": "",
 		"poster": "https://image.tmdb.org/t/p/w200/null",
-		"genre": [],
+		"genre": [
+			"Not available"
+		],
 		"language": "en"
 	},
 	{
@@ -8433,7 +8540,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -9286,7 +9395,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -9324,7 +9435,9 @@
 		"type": "series",
 		"overview": "",
 		"poster": "https://image.tmdb.org/t/p/w200/null",
-		"genre": [],
+		"genre": [
+			"Not available"
+		],
 		"language": "en"
 	},
 	{
@@ -9567,7 +9680,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -9577,7 +9692,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -9587,7 +9704,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -9609,7 +9728,9 @@
 		"type": "series",
 		"overview": "Experience nature's art as filmmaker Louie Schwartzberg highlights the beauty that lurks in oceans, forests, deserts and flowers.",
 		"poster": "https://image.tmdb.org/t/p/w200//g4YBmzX5yyu9w3oyBIurVcFzMKf.jpg",
-		"genre": [],
+		"genre": [
+			"Not available"
+		],
 		"language": "en"
 	},
 	{
@@ -9619,7 +9740,9 @@
 		"type": "series",
 		"overview": "Experience nature's art as filmmaker Louie Schwartzberg highlights the beauty that lurks in oceans, forests, deserts and flowers.",
 		"poster": "https://image.tmdb.org/t/p/w200//g4YBmzX5yyu9w3oyBIurVcFzMKf.jpg",
-		"genre": [],
+		"genre": [
+			"Not available"
+		],
 		"language": "en"
 	},
 	{
@@ -9641,7 +9764,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -10076,7 +10201,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -10096,12 +10223,10 @@
 		"chapter": "null",
 		"date": "12/03/2018",
 		"type": "series",
-		"overview": "When Reed Richards, Sue and Johnny Storm and pilot Ben Grimm take a premature space flight on a new shuttle, they find themselves massively bombarded with cosmic radiation. Barely managing to re-enter and land safely, the quartet find themselves forever transformed with superpowers. Deciding to use these new powers to help people, they form the Fantastic Four, a superhero team dedicated to the protection of Earth from menaces like the Latverian King Dr. Doom and Galactus, the planet consumer.",
-		"poster": "https://image.tmdb.org/t/p/w200//xqqZjLBUEOVAsXneUwITCuas9jL.jpg",
+		"overview": "Fantastic Max is a 1988–90 animated cartoon series as part of the 4th season of The Funtastic World of Hanna-Barbera, created by Kalisto Ltd. and Hanna-Barbera Productions and in association with S4C. It centers on a diaper-wearing toddler with a mohawk named Maxwell \"Fantastic Max\" Young who has adventures in outer space with two of his toys: FX, a pull string alien doll from a planet called Twinkle-Twinkle, and A.B. Sitter, a C-3PO-like android made of blocks.",
+		"poster": "https://image.tmdb.org/t/p/w200//1uLJEISERP3RdvH5fg77Kzkfbf4.jpg",
 		"genre": [
-			"Action & Adventure",
-			"Animation",
-			"Kids"
+			"Animation"
 		],
 		"language": "en"
 	},
@@ -10152,10 +10277,10 @@
 		"chapter": "null",
 		"date": "11/21/18",
 		"type": "series",
-		"overview": "An in-depth examination of some of the most stunning and emotional courtroom moments caught on camera, from frightening outbursts to furious judges.",
-		"poster": "https://image.tmdb.org/t/p/w200//o3alN0tDe9NmhHyNCBScdf4bsiT.jpg",
+		"overview": "A series that shows AOA's daily idol life behind-the-scenes of their schedules.",
+		"poster": "https://image.tmdb.org/t/p/w200//wFyJi8BBBekw8iHkXHvpalTkPVD.jpg",
 		"genre": [
-			"Reality"
+			"Not available"
 		],
 		"language": "en"
 	},
@@ -10212,12 +10337,12 @@
 		"chapter": "The Funeral",
 		"date": "11/14/18",
 		"type": "series",
-		"overview": "A gritty, action-packed crime drama set during the brutal Tong Wars of San Francisco’s Chinatown in the second half of the 19th century. The series follows Ah Sahm, a martial arts prodigy who immigrates from China to San Francisco under mysterious circumstances, and becomes a hatchet man for one of Chinatown’s most powerful tongs.",
-		"poster": "https://image.tmdb.org/t/p/w200//eLPxEM7WAvljjFv4UwJ1awhANa9.jpg",
+		"overview": "After waking up in a morgue, an orphaned teen discovers she now possesses superpowers as the chosen Halo-Bearer for a secret sect of demon-hunting nuns.",
+		"poster": "https://image.tmdb.org/t/p/w200//77OM9jMJ8nglaolHLwrAW7kvadV.jpg",
 		"genre": [
-			"Crime",
+			"Action & Adventure",
 			"Drama",
-			"Action & Adventure"
+			"Sci-Fi & Fantasy"
 		],
 		"language": "en"
 	},
@@ -10228,7 +10353,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -10238,7 +10365,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -10248,7 +10377,9 @@
 		"type": "series",
 		"overview": "",
 		"poster": "https://image.tmdb.org/t/p/w200/null",
-		"genre": [],
+		"genre": [
+			"Not available"
+		],
 		"language": "en"
 	},
 	{
@@ -10258,7 +10389,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -10268,7 +10401,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -10276,13 +10411,13 @@
 		"chapter": "null",
 		"date": "11/05/2018",
 		"type": "series",
-		"overview": "People commit variety of ugly crimes these days. However, they forgive themselves by giving testimony every week. They believe that they can repent just by having faith. But the truth is that they have faith to repeat the sins again and again without remorse. These people atone for their evil deeds just to feel comfortable and carefree. It is not about the victims who are suffering because of them. They say every people are equal before the religions. But it is time to discriminate people who only uses them for their interest. Screening if they are really good people, punishing if they deserve to be punished, and defending justice is needed for modern day religion. A priest with this sense of justice teams up with a detective and a prosecutor. They try to solve the mysterious death of an elderly priest and serve justice.",
-		"poster": "https://image.tmdb.org/t/p/w200//xRKMTuOoLLqj8EG0BHYUIYQOtdl.jpg",
+		"overview": "",
+		"poster": "https://image.tmdb.org/t/p/w200/null",
 		"genre": [
-			"Comedy",
-			"Crime"
+			"Animation",
+			"Comedy"
 		],
-		"language": "ko"
+		"language": "en"
 	},
 	{
 		"title": "American Assassin",
@@ -10303,7 +10438,9 @@
 		"type": "series",
 		"overview": "Coming to grips with Christianity means coming to grips with Paul. There is no figure aside from Jesus himself who is more important to the history of this world religion, and no figure from the age of the early church about whom we know more or of whom we have a more rounded view.\n\nHistorian Luke Timothy Johnson, the best-selling author of The Real Jesus, offers a fresh and historically grounded assessment of the life and letters of Christianity's \"apostle to the Gentiles\" in this 12-lecture series.",
 		"poster": "https://image.tmdb.org/t/p/w200//e1wsaVLk7UsOZT4Nu10AjiJxpZB.jpg",
-		"genre": [],
+		"genre": [
+			"Not available"
+		],
 		"language": "en"
 	},
 	{
@@ -10521,7 +10658,9 @@
 		"type": "series",
 		"overview": "Bram Stoker's Dracula is a 1973 television adaptation of Bram Stoker's 1897 novel Dracula written by Richard Matheson and directed by Dark Shadows creator Dan Curtis, with Jack Palance in the title role. It was the second collaboration for both Curtis and Palance since the 1968 TV film Dr. Jekyll and Mr. Hyde.",
 		"poster": "https://image.tmdb.org/t/p/w200/null",
-		"genre": [],
+		"genre": [
+			"Not available"
+		],
 		"language": "en"
 	},
 	{
@@ -11221,7 +11360,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -11284,7 +11425,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -11333,7 +11476,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -11343,7 +11488,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -11586,7 +11733,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -11607,10 +11756,10 @@
 		"chapter": "null",
 		"date": "7/15/18",
 		"type": "series",
-		"overview": "The Royal Bodyguard is a British television sitcom, written by Mark Bussell and Justin Sbresni, and starring David Jason, Geoffrey Whitehead, Tim Downie and Timothy Bentinck. A series of six episodes began on 26 December 2011, concluding on 30 January 2012. The first episode picked up more than 8 million viewers but the series declined in ratings throughout, with the fifth episode barely achieving 2 million viewers. The series was heavily criticised by viewers and critics. At 71 Jason was widely felt to be too old for the lead role.\n\nThe show was cancelled by the BBC and will not return for further episodes.",
+		"overview": "",
 		"poster": "https://image.tmdb.org/t/p/w200/null",
 		"genre": [
-			"Comedy"
+			"Not available"
 		],
 		"language": "en"
 	},
@@ -11681,11 +11830,10 @@
 		"chapter": "null",
 		"date": "07/08/2018",
 		"type": "series",
-		"overview": "Teresa flees Mexico after her drug-runner boyfriend is murdered. Settling in Dallas, she looks to become the country's reigning drug smuggler and to avenge her lover's murder.",
-		"poster": "https://image.tmdb.org/t/p/w200//xGHq3yr0zHxYEp82WkGx7ffKOeg.jpg",
+		"overview": "Elida, an orphaned queen who refuses to accept her true title, prefers to scavenge and get into scrapes throughout the galaxy as the Republic government seeks to snuff out her royal bloodline. Elida's existence is turned upside down when her friend from way back, Isaac, claims that Elida's mother, Xevelyn, is still alive.",
+		"poster": "https://image.tmdb.org/t/p/w200//s83DmhvDxeVPu4x4ZpLQ3KmGe0K.jpg",
 		"genre": [
-			"Crime",
-			"Drama"
+			"Sci-Fi & Fantasy"
 		],
 		"language": "en"
 	},
@@ -11720,7 +11868,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -11730,7 +11880,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -11738,7 +11890,7 @@
 		"chapter": "null",
 		"date": "6/25/18",
 		"type": "series",
-		"overview": "Mind, Body & Kick Ass Moves is a television programme broadcast on BBC Three. Presented by Chris Crudelli the documentary series travels around the Far East exploring different martial arts and learning the secret skills and knowledge of the 'Grandmasters'. The series investigates aspects of each different martial art by filming the masters demonstrating their style and skills. There is one series of 10 episodes. Each episode focuses on a mix of different martial arts and masters and shows Crudelli taking some martial arts and tricks to the streets, in a style similar to street magic. The opening narration states Crudelli is a master of combat and esoteric energies.\n\nAn edited version was broadcast in the United States in half-hour segments as Mind, Body & Kickin' Moves on FSN.",
+		"overview": "",
 		"poster": "https://image.tmdb.org/t/p/w200/null",
 		"genre": [
 			"Documentary"
@@ -11763,7 +11915,7 @@
 		"date": "6/20/18",
 		"type": "series",
 		"overview": "Public Enemies explores the relationship between 28-year-old Eddie, recently released on life licence from prison after serving 10 years, and his probation officer, Paula, returning from suspension following a shocking crime committed by an offender under her supervision.",
-		"poster": "https://image.tmdb.org/t/p/w200/null",
+		"poster": "https://image.tmdb.org/t/p/w200//vNkP1tsyZ2ktQy5mZBwS7dSvZyO.jpg",
 		"genre": [
 			"Drama"
 		],
@@ -11851,7 +12003,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -11861,7 +12015,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -11923,7 +12079,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -11933,7 +12091,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -11943,7 +12103,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -11966,7 +12128,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -12012,7 +12176,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -12189,7 +12355,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -12250,7 +12418,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -12321,7 +12491,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -12346,7 +12518,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -12356,7 +12530,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -12366,7 +12542,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -12376,7 +12554,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -12732,7 +12912,9 @@
 		"type": "series",
 		"overview": "UK documentary series from 1998 examining the stranger aspects of reality. The series was resurrected a few years later under the same name, once again on Channel 5.",
 		"poster": "https://image.tmdb.org/t/p/w200//tuBkNbYArrVKdUtl3a9lVmKQDGz.jpg",
-		"genre": [],
+		"genre": [
+			"Not available"
+		],
 		"language": "en"
 	},
 	{
@@ -12742,7 +12924,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -12776,7 +12960,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -12835,7 +13021,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -12845,7 +13033,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -13072,7 +13262,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -13095,7 +13287,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -13479,7 +13673,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -13489,7 +13685,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -13499,7 +13697,9 @@
 		"type": "series",
 		"overview": "Hitman is a quiz programme that was produced by Television South and aired on the ITV network for 1 series in 1989, the programme was hosted by Nick Owen. The program was based on the US version, which aired on NBC in 1983 and was hosted by Peter Tomarken.",
 		"poster": "https://image.tmdb.org/t/p/w200/null",
-		"genre": [],
+		"genre": [
+			"Not available"
+		],
 		"language": "en"
 	},
 	{
@@ -13719,7 +13919,9 @@
 		"type": "series",
 		"overview": "",
 		"poster": "https://image.tmdb.org/t/p/w200//vOXpkwVqt0TfewzJGSqL4TG4F4z.jpg",
-		"genre": [],
+		"genre": [
+			"Not available"
+		],
 		"language": "pt"
 	},
 	{
@@ -13766,8 +13968,8 @@
 		"chapter": "null",
 		"date": "11/05/2017",
 		"type": "series",
-		"overview": "Players from all walks of life will compete to win up to £50,000. All living in one modern block but separately in individual apartments, the players will never come face-to.face, and can only interact with one another through an specially-designed app called The Circle.",
-		"poster": "https://image.tmdb.org/t/p/w200//ex0M3ZSdq0BjZzRJQz9CGss4aBn.jpg",
+		"overview": "Status and strategy collide in this social experiment and competition show where online players flirt, befriend and catfish their way toward $100,000.",
+		"poster": "https://image.tmdb.org/t/p/w200//iLABOuBN3KgjiNRgi9mDG7bvGDE.jpg",
 		"genre": [
 			"Reality"
 		],
@@ -14346,7 +14548,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -14356,7 +14560,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -14433,10 +14639,12 @@
 		"chapter": "null",
 		"date": "9/23/17",
 		"type": "series",
-		"overview": "Using highly advanced colourisation techniques, critical moments from World War II, from Stalingrad to The Battle of Britain, are shown in a whole new light.",
-		"poster": "https://image.tmdb.org/t/p/w200//hyW2spSiEZHkQ4swKsTmFty9Jc2.jpg",
+		"overview": "World War II In HD Colour is a 13-episode television documentary miniseries recounting the events of World War II narrated by Robert Powell. The show covers the Western Front, Eastern Front, and the Pacific War. It is on syndication in America on the Military Channel. This series is in full color, combining both original and colorized footage.",
+		"poster": "https://image.tmdb.org/t/p/w200//1in5DbN4t8a7Osw9hCqWEmNoEZF.jpg",
 		"genre": [
-			"Documentary"
+			"Documentary",
+			"Reality",
+			"War & Politics"
 		],
 		"language": "en"
 	},
@@ -14445,10 +14653,12 @@
 		"chapter": "null",
 		"date": "9/23/17",
 		"type": "series",
-		"overview": "Using highly advanced colourisation techniques, critical moments from World War II, from Stalingrad to The Battle of Britain, are shown in a whole new light.",
-		"poster": "https://image.tmdb.org/t/p/w200//hyW2spSiEZHkQ4swKsTmFty9Jc2.jpg",
+		"overview": "World War II In HD Colour is a 13-episode television documentary miniseries recounting the events of World War II narrated by Robert Powell. The show covers the Western Front, Eastern Front, and the Pacific War. It is on syndication in America on the Military Channel. This series is in full color, combining both original and colorized footage.",
+		"poster": "https://image.tmdb.org/t/p/w200//1in5DbN4t8a7Osw9hCqWEmNoEZF.jpg",
 		"genre": [
-			"Documentary"
+			"Documentary",
+			"Reality",
+			"War & Politics"
 		],
 		"language": "en"
 	},
@@ -14457,10 +14667,12 @@
 		"chapter": "null",
 		"date": "9/23/17",
 		"type": "series",
-		"overview": "Using highly advanced colourisation techniques, critical moments from World War II, from Stalingrad to The Battle of Britain, are shown in a whole new light.",
-		"poster": "https://image.tmdb.org/t/p/w200//hyW2spSiEZHkQ4swKsTmFty9Jc2.jpg",
+		"overview": "World War II In HD Colour is a 13-episode television documentary miniseries recounting the events of World War II narrated by Robert Powell. The show covers the Western Front, Eastern Front, and the Pacific War. It is on syndication in America on the Military Channel. This series is in full color, combining both original and colorized footage.",
+		"poster": "https://image.tmdb.org/t/p/w200//1in5DbN4t8a7Osw9hCqWEmNoEZF.jpg",
 		"genre": [
-			"Documentary"
+			"Documentary",
+			"Reality",
+			"War & Politics"
 		],
 		"language": "en"
 	},
@@ -14469,10 +14681,12 @@
 		"chapter": "null",
 		"date": "9/23/17",
 		"type": "series",
-		"overview": "Using highly advanced colourisation techniques, critical moments from World War II, from Stalingrad to The Battle of Britain, are shown in a whole new light.",
-		"poster": "https://image.tmdb.org/t/p/w200//hyW2spSiEZHkQ4swKsTmFty9Jc2.jpg",
+		"overview": "World War II In HD Colour is a 13-episode television documentary miniseries recounting the events of World War II narrated by Robert Powell. The show covers the Western Front, Eastern Front, and the Pacific War. It is on syndication in America on the Military Channel. This series is in full color, combining both original and colorized footage.",
+		"poster": "https://image.tmdb.org/t/p/w200//1in5DbN4t8a7Osw9hCqWEmNoEZF.jpg",
 		"genre": [
-			"Documentary"
+			"Documentary",
+			"Reality",
+			"War & Politics"
 		],
 		"language": "en"
 	},
@@ -14513,7 +14727,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -14578,7 +14794,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -15226,7 +15444,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -15248,7 +15468,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -15258,7 +15480,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -15414,7 +15638,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -15424,7 +15650,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -15560,7 +15788,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -15570,7 +15800,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -15648,7 +15880,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -15694,7 +15928,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -15746,7 +15982,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -15877,12 +16115,12 @@
 		"chapter": "null",
 		"date": "2/22/17",
 		"type": "series",
-		"overview": "",
-		"poster": "https://image.tmdb.org/t/p/w200//zSEUtQJrbZvxGEu2tIUSY0Bhkim.jpg",
+		"overview": "A skeleton discovered in a tank reveals the existence of five psycho housewives. What's making these women cause terror in the lives of their husbands?",
+		"poster": "https://image.tmdb.org/t/p/w200//tP4sqN7w6s9jpQRWI7RIgPXrypO.jpg",
 		"genre": [
-			"Documentary"
+			"Mystery"
 		],
-		"language": "fr"
+		"language": "bn"
 	},
 	{
 		"title": "Bates Motel",
@@ -16156,7 +16394,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -16218,7 +16458,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -16228,7 +16470,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -16421,7 +16665,9 @@
 		"type": "series",
 		"overview": "",
 		"poster": "https://image.tmdb.org/t/p/w200//ufuxPkuvfyketAxTrmdGLDj5SHZ.jpg",
-		"genre": [],
+		"genre": [
+			"Not available"
+		],
 		"language": "ja"
 	},
 	{
@@ -16769,7 +17015,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -16793,7 +17041,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -16939,7 +17189,9 @@
 		"type": "series",
 		"overview": "",
 		"poster": "https://image.tmdb.org/t/p/w200//d9rKdgwqVcKFzAd7tJRrcXmLBF6.jpg",
-		"genre": [],
+		"genre": [
+			"Not available"
+		],
 		"language": "en"
 	},
 	{
@@ -16973,10 +17225,10 @@
 		"chapter": "null",
 		"date": "01/08/2017",
 		"type": "series",
-		"overview": "Jurassic Fight Club is a paleontology-based television series on History which premiered in the USA in July 2008. Jurassic Fight Club was hosted by George Blasing, a self-taught paleontologist. The show ran for one season of 12 episodes and was not renewed.",
-		"poster": "https://image.tmdb.org/t/p/w200//lvqSbroxgBX7Z4HhogocDh824Xc.jpg",
+		"overview": "",
+		"poster": "https://image.tmdb.org/t/p/w200//s9xrsOecW13DtsbQaAzkdCJw8jA.jpg",
 		"genre": [
-			"Documentary"
+			"Not available"
 		],
 		"language": "en"
 	},
@@ -17013,7 +17265,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -18089,7 +18343,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -18099,7 +18355,9 @@
 		"type": "series",
 		"overview": "The drama revolves around a married couple as they tackle everyday experiences that ordinary people face from problems of the heart to friendship and career, that is if the real world is full of people with killer looks and are ultra successful.  Bai Can Lan is a stone-cold HR executive whose specialty is ridding people of their jobs. Outside of work, she is a young, loving and beautiful wife who holds a no pregnancy policy. Zhao Yang Guang is an IT genius with enviable good looks, high IQ, and high EQ. He is pretty much the all-around guy who has a stubborn side.",
 		"poster": "https://image.tmdb.org/t/p/w200//mDwY46Goire3hKTb4I2RaMKwZMm.jpg",
-		"genre": [],
+		"genre": [
+			"Not available"
+		],
 		"language": "en"
 	},
 	{
@@ -18239,7 +18497,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -18342,7 +18602,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -18442,7 +18704,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -18466,7 +18730,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -18474,13 +18740,11 @@
 		"chapter": "null",
 		"date": "11/25/16",
 		"type": "series",
-		"overview": "Four turtles fall into the sewers and are befriended by Hamato Yoshi a Japanese man sent to New York who was forced to live in the sewers. One day he sees a strange green glow which transforms the four turtles into human-like creatures. Hamato (now Master Splinter) changes into a giant rat from the green glow and teaches the turtles the skills of the ninja as they team up with news reporter April O'Neil to battle against Yoshi's arch enemy Shredder and Krang, an alien warlord from Dimension X.",
-		"poster": "https://image.tmdb.org/t/p/w200//9vpWpUNKDbC41dRrsQziKREqp29.jpg",
+		"overview": "Teenage Mutant Ninja Turtles is an American animated television series, mainly set in New York City. It first aired on February 8, 2003 and ended on February 28, 2009. The series marked the revival of the franchise as a Saturday morning cartoon on Fox's Fox Box programming block The TMNT 2003 TV series was produced by 4Kids Entertainment, and Mirage Studios, which each owned half of the rights to the show, and animated by Dong Woo Animation. Reruns ran on Cartoon Network's Miguzi block in 2004. The series migrated to The CW4Kids in its final season after 4Kids's contract with Fox ended. Nickelodeon now owns the rights to this and any future Turtles series.",
+		"poster": "https://image.tmdb.org/t/p/w200//lmHTrAACwiNXWqqCey6UfCbbxzh.jpg",
 		"genre": [
 			"Action & Adventure",
-			"Animation",
-			"Comedy",
-			"Kids"
+			"Animation"
 		],
 		"language": "en"
 	},
@@ -18530,7 +18794,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -18631,7 +18897,9 @@
 		"type": "series",
 		"overview": "Nearly three decades after the discovery of the T-virus, an outbreak reveals the Umbrella Corporation's dark secrets. Based on the horror franchise.",
 		"poster": "https://image.tmdb.org/t/p/w200/null",
-		"genre": [],
+		"genre": [
+			"Not available"
+		],
 		"language": "en"
 	},
 	{
@@ -18836,7 +19104,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -19587,7 +19857,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -20667,7 +20939,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -20981,7 +21255,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -21056,7 +21332,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -21066,7 +21344,9 @@
 		"type": "series",
 		"overview": "",
 		"poster": "https://image.tmdb.org/t/p/w200/null",
-		"genre": [],
+		"genre": [
+			"Not available"
+		],
 		"language": "en"
 	},
 	{
@@ -21180,7 +21460,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -22171,8 +22453,8 @@
 		"chapter": "null",
 		"date": "04/08/2016",
 		"type": "series",
-		"overview": "It’s not just humans who mess up. The lion and the cheetah are the most graceful and deadly predators on Earth— but that doesn’t mean they always gets it right on the first go. See what happens when nature’s most powerful predators get it wrong.",
-		"poster": "https://image.tmdb.org/t/p/w200/null",
+		"overview": "To Catch a Predator is an American reality television series that features hidden camera investigations by the television newsmagazine program Dateline NBC. It was devoted to impersonating underage people and detaining male adults who contacted them over the Internet for sexual liaisons. People were lured to meet with a decoy under the pretense of sexual contact and then confronted. Show host Chris Hansen clarified in an interview with NPR News that these subjects should be labeled as potential sexual predators, and not pedophiles. \"Pedophiles have a very specific definition, people who are interested in prepubescent sex,\" he stated.\n\nThe series premiered in November 2004, and featured 12 investigations in total held across the United States. The investigations were conducted as undercover sting operations with the help of on-line watchdog group Perverted-Justice. Since the third installment, law enforcement and other officials were also involved, leading to the arrests of most individuals caught. No new episodes have aired since December 2007.\n\nNBC affiliates WTMJ in Milwaukee, KSHB in Kansas City and WBRE have also done local versions of To Catch a Predator. Various spin-offs have aired in the same format, including To Catch a Con Man, To Catch an ID Thief, To Catch a Car Thief and To Catch an i-Jacker, which featured iPod thieves. To Catch a Predator is also aired on FX and Crime & Investigation Network in the United Kingdom, the Crime & Investigation Network in Australia and New Zealand and FOX Crime in Portugal.",
+		"poster": "https://image.tmdb.org/t/p/w200//3Kp8JjjsWDlEvPXvp7LjLIyjGt2.jpg",
 		"genre": [
 			"Documentary"
 		],
@@ -22306,7 +22588,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -22316,7 +22600,9 @@
 		"type": "series",
 		"overview": "Grown Ups is an American sitcom that aired on the UPN network from 1999 to 2000. Starring Jaleel White, the series was created by Matthew Miller and based on a story written by White.",
 		"poster": "https://image.tmdb.org/t/p/w200/null",
-		"genre": [],
+		"genre": [
+			"Not available"
+		],
 		"language": "en"
 	},
 	{
@@ -22679,7 +22965,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -22703,7 +22991,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -22713,7 +23003,9 @@
 		"type": "series",
 		"overview": "",
 		"poster": "https://image.tmdb.org/t/p/w200/null",
-		"genre": [],
+		"genre": [
+			"Not available"
+		],
 		"language": "en"
 	},
 	{
@@ -22723,7 +23015,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -22733,7 +23027,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -22825,7 +23121,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -22835,7 +23133,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -22845,7 +23145,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -23126,7 +23428,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -23267,7 +23571,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -23333,7 +23639,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -23353,12 +23661,12 @@
 		"chapter": "null",
 		"date": "9/13/15",
 		"type": "series",
-		"overview": "A gritty, action-packed crime drama set during the brutal Tong Wars of San Francisco’s Chinatown in the second half of the 19th century. The series follows Ah Sahm, a martial arts prodigy who immigrates from China to San Francisco under mysterious circumstances, and becomes a hatchet man for one of Chinatown’s most powerful tongs.",
-		"poster": "https://image.tmdb.org/t/p/w200//eLPxEM7WAvljjFv4UwJ1awhANa9.jpg",
+		"overview": "After waking up in a morgue, an orphaned teen discovers she now possesses superpowers as the chosen Halo-Bearer for a secret sect of demon-hunting nuns.",
+		"poster": "https://image.tmdb.org/t/p/w200//77OM9jMJ8nglaolHLwrAW7kvadV.jpg",
 		"genre": [
-			"Crime",
+			"Action & Adventure",
 			"Drama",
-			"Action & Adventure"
+			"Sci-Fi & Fantasy"
 		],
 		"language": "en"
 	},
@@ -23423,7 +23731,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -23446,7 +23756,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -23456,7 +23768,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -23466,7 +23780,9 @@
 		"type": "series",
 		"overview": "",
 		"poster": "https://image.tmdb.org/t/p/w200//d9rKdgwqVcKFzAd7tJRrcXmLBF6.jpg",
-		"genre": [],
+		"genre": [
+			"Not available"
+		],
 		"language": "en"
 	},
 	{
@@ -23474,10 +23790,10 @@
 		"chapter": "null",
 		"date": "08/04/2015",
 		"type": "series",
-		"overview": "An off-beat comedy set in the front office of a fictional pro basketball expansion team and centered on Jake Tullus, a Silicon Valley tycoon whose lifelong dream was to buy a pro basketball team but quickly finds he’s in over his head. The group he assembled to run Las Vegas’ first pro sports team won’t be much help.",
-		"poster": "https://image.tmdb.org/t/p/w200//vXGhh5ERu16UJud5rBQ0n6xwUCe.jpg",
+		"overview": "",
+		"poster": "https://image.tmdb.org/t/p/w200//iIxNPJSjesLkiDMaYi1fgsM67YT.jpg",
 		"genre": [
-			"Comedy"
+			"Not available"
 		],
 		"language": "en"
 	},
@@ -23488,7 +23804,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -23564,7 +23882,9 @@
 		"type": "series",
 		"overview": "",
 		"poster": "https://image.tmdb.org/t/p/w200/null",
-		"genre": [],
+		"genre": [
+			"Not available"
+		],
 		"language": "en"
 	},
 	{
@@ -23587,7 +23907,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -23830,7 +24152,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -24032,7 +24356,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -24324,7 +24650,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -24334,7 +24662,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -24344,7 +24674,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -24354,7 +24686,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -24364,7 +24698,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -24398,7 +24734,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -24406,10 +24744,11 @@
 		"chapter": "null",
 		"date": "10/12/2014",
 		"type": "series",
-		"overview": "The complex world of our bravest military heroes who make personal sacrifices while executing the most challenging and dangerous missions behind enemy lines.",
-		"poster": "https://image.tmdb.org/t/p/w200//jC5SzIJP8zk1sRroGM9v7nBx9xp.jpg",
+		"overview": "Batman isn't going at it alone this time! From Warner Bros. Animation comes the latest interpretation of the classic Batman franchise. Our caped crusader is teamed up with heroes from across the DC Universe, delivering nonstop action and adventure with a touch of comic relief. Blue Beetle, Green Arrow, Aquaman and countless others will get a chance to uphold justice alongside Batman. Though still based in Gotham, Batman will frequently find himself outside city limits, facing situations that are both unfamiliar and exhilarating. With formidable foes around every corner, Batman will still rely on his stealth, resourcefulness and limitless supply of cool gadgets to bring justice home.",
+		"poster": "https://image.tmdb.org/t/p/w200//tv2mOIRcPP4H0DhOH84xPgqui7d.jpg",
 		"genre": [
-			"Drama"
+			"Animation",
+			"Action & Adventure"
 		],
 		"language": "en"
 	},
@@ -24420,7 +24759,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -24430,7 +24771,9 @@
 		"type": "series",
 		"overview": "",
 		"poster": "https://image.tmdb.org/t/p/w200/null",
-		"genre": [],
+		"genre": [
+			"Not available"
+		],
 		"language": "en"
 	},
 	{
@@ -24733,7 +25076,9 @@
 		"type": "series",
 		"overview": "The Wave mixes sun, sea, surf...and stacks of cash. But instead of packing sunscreen, competitors must pack their swimmers as Rylan Clark-Neal sends them off in pairs to battle it out on the Atlantic coast of Portugal in an effort to win the booty.",
 		"poster": "https://image.tmdb.org/t/p/w200/null",
-		"genre": [],
+		"genre": [
+			"Not available"
+		],
 		"language": "en"
 	},
 	{
@@ -24743,7 +25088,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -24767,7 +25114,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -24792,7 +25141,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -24815,7 +25166,9 @@
 		"type": "series",
 		"overview": "",
 		"poster": "https://image.tmdb.org/t/p/w200/null",
-		"genre": [],
+		"genre": [
+			"Not available"
+		],
 		"language": "en"
 	},
 	{
@@ -24994,7 +25347,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -25004,7 +25359,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -25153,7 +25510,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -25162,7 +25521,7 @@
 		"date": "08/07/2013",
 		"type": "series",
 		"overview": "It's the year 1923, and vampires have existed for quite a while. But now, the number of vampires is increasing and a mysterious, artificial blood source called Ascra has appeared. The Japanese government, in turn, creates \"Code Zero,\" a unit within the army tasked with taking down the vampiric forces. And what better way to track vampires than by using vampires? Created by Lieutenant General Nakajima, this unit has historically been in the business of information war, but has been re-assigned to solve the vampire crisis.",
-		"poster": "https://image.tmdb.org/t/p/w200//4EFI8IdI7LOm9Q0BTT2FAdPwdeq.jpg",
+		"poster": "https://image.tmdb.org/t/p/w200//zOROtGE5TF04X1M7vEUOy8EkULv.jpg",
 		"genre": [
 			"Animation",
 			"Mystery",
@@ -25284,13 +25643,12 @@
 		"chapter": "null",
 		"date": "06/03/2013",
 		"type": "series",
-		"overview": "After years of keeping his detectives at the headquarters, the Montreal PD has decided to reassign them to neighbourhood precincts in an effort to get closer to the population. Nadine Legrand and Patrick Bissonnette have to find their footing in their new work place: District 31.",
-		"poster": "https://image.tmdb.org/t/p/w200//w52KXV9slyzV9PxSnULo06M8afK.jpg",
+		"overview": "After surrendering to Bogotá police, an ex-guerrilla avoids prison by working undercover to investigate a ruthless enforcer of government corruption.",
+		"poster": "https://image.tmdb.org/t/p/w200//kcp2pHSrq8FsPzhOXbYH0TSFGLk.jpg",
 		"genre": [
-			"Crime",
 			"Drama"
 		],
-		"language": "fr"
+		"language": "es"
 	},
 	{
 		"title": "Ocean's Eleven",
@@ -25299,7 +25657,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -26149,7 +26509,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -26159,7 +26521,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -26169,7 +26533,9 @@
 		"type": "series",
 		"overview": "",
 		"poster": "https://image.tmdb.org/t/p/w200/null",
-		"genre": [],
+		"genre": [
+			"Not available"
+		],
 		"language": "en"
 	},
 	{
@@ -26192,7 +26558,9 @@
 		"type": "series",
 		"overview": "Shame, an Egyptian television series show in Ramadan 1431 H / 2010. Taken from the film the shame of the writer Mahmoud Abu Zeid, completed his son this story serial shame, it was clear that the children - in the series - got the money, unlike what happened in the film is the loss of the deal in the navigation. The purpose of the series is to raise awareness about what is forbidden and what is happening.",
 		"poster": "https://image.tmdb.org/t/p/w200/null",
-		"genre": [],
+		"genre": [
+			"Not available"
+		],
 		"language": "en"
 	},
 	{
@@ -26202,7 +26570,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -26224,7 +26594,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -26234,7 +26606,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -26254,10 +26628,13 @@
 		"chapter": "null",
 		"date": "11/10/2012",
 		"type": "series",
-		"overview": "James May is out to prove why traditional, old fashioned toys are still relevant today when he pushes them to the limit in spectacular, supersize challenges.",
-		"poster": "https://image.tmdb.org/t/p/w200//5NAkQP0ADRdP521C6ggYHxLuS5q.jpg",
+		"overview": "",
+		"poster": "https://image.tmdb.org/t/p/w200/null",
 		"genre": [
-			"Documentary"
+			"Animation",
+			"Comedy",
+			"Family",
+			"Kids"
 		],
 		"language": "en"
 	},
@@ -26268,7 +26645,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -26327,7 +26706,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -26439,7 +26820,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -26449,7 +26832,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -26531,7 +26916,9 @@
 		"type": "series",
 		"overview": "Spaceballs: The Animated Series, also known as Spaceballs: The Series, is an animated television series that premiered in 2008 on G4 and Canada's Super Channel, and is loosely based on the parody science fiction film Spaceballs. Similarly to how the original film parodied the original Star Wars films and the Star Trek universe, each episode of the series parodies a different film or other aspect of popular culture, such as the Star Wars prequel trilogy, The Lord of the Rings, or the Grand Theft Auto video games.",
 		"poster": "https://image.tmdb.org/t/p/w200//dq4IP748wynBX6Vwd41FUCw7aie.jpg",
-		"genre": [],
+		"genre": [
+			"Not available"
+		],
 		"language": "en"
 	},
 	{
@@ -26541,7 +26928,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -26575,7 +26964,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -26585,7 +26976,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -26595,7 +26988,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -26605,7 +27000,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -26627,7 +27024,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -26637,7 +27036,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{
@@ -26674,7 +27075,9 @@
 		"type": "series",
 		"overview": "The Cube is a triple BAFTA Award–winning British game show which first aired on ITV on 22 August 2009. Presented by Phillip Schofield, it offers contestants the chance to win a top prize of £250,000 by completing challenges from within a 4m × 4m × 4m Perspex cube. The show is based on the idea that even straightforward tasks become extremely challenging when confined and put under pressure in front of a large live studio audience. Once inside, contestants can feel both claustrophobic and disorientated. Using \"state-of-the-art filming techniques\", the show aims to demonstrate the intense anxiety which contestants undergo as they progress through each task. Colin McFarlane provides the disembodied voice of The Cube, who explains the rules of the games.",
 		"poster": "https://image.tmdb.org/t/p/w200/null",
-		"genre": [],
+		"genre": [
+			"Not available"
+		],
 		"language": "en"
 	},
 	{
@@ -26684,7 +27087,9 @@
 		"type": "Not available",
 		"overview": "Not available",
 		"poster": "Not available",
-		"genre": "Not available",
+		"genre": [
+			"Not available"
+		],
 		"language": "Not available"
 	},
 	{

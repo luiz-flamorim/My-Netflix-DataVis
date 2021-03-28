@@ -33,6 +33,7 @@ function createChart(d, width, height, radius, step, theta) {
         return obj
     })
 
+
     const svg = d3.select('#dots')
         .attr("viewBox", [0, 0, width, height]);
 
@@ -49,14 +50,24 @@ function createChart(d, width, height, radius, step, theta) {
     }
     `);
 
+    // let colour = d3.scaleOrdinal()
+    //     .domain(m.genre)
+    //     .range(['black', 'blue', 'red'])
+
     g.selectAll("circle")
         .data(m, d => d.id)
         .join("circle")
         .attr("cx", d => d.x)
         .attr("cy", d => d.y)
         .attr("r", radius)
-        .attr("fill", (d, i) => d3.interpolateRainbow(i / 360))
+        // .attr("fill", (d, i) => d3.interpolateRainbow(i / 360))
+        // .attr("fill", m => console.log(m.genre))
         // .attr("fill", d => //define the scale of genres and pass to d.genre)
+
+        .attr("fill", m => d3.scaleOrdinal(m.genre)
+            .domain(m.genre)
+            .range(['black', 'blue', 'red']))
+
         .on("mousedown", mousedowned)
         .append("title")
         .text(d => `${d.title}`)

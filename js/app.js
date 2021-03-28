@@ -2,25 +2,26 @@
 const csv = require('csv-parser')
 const fs = require('fs')
 const fetch = require("node-fetch");
+var apikey
+fs.createReadStream('/Users/luizamorim/Desktop/NetflixII/data/NetflixViewingHistory.csv')
+.pipe(csv({}))
+.on('data', (data) => results.push(data))
+.on('end', () =>
+    newDataset(results)
+)
+
 const results = []
-var apikey = //API key here
-    fs.createReadStream('/Users/luizamorim/Desktop/NetflixII/data/NetflixViewingHistory.csv')
-    .pipe(csv({}))
-    .on('data', (data) => results.push(data))
-    .on('end', () =>
-        newDataset(results)
-    )
 
 //activate this block to use on the CLIENT
 // const filmData = d3.csv("/data/NetflixViewingHistory.csv")
 //     .then(data =>
-//          newDataset(data) 
+//         newDataset(data)
 //     );
-//     console.log(filmData);
+// console.log(filmData);
 
 async function newDataset(d) {
     let dataset = []
-    
+
     let genreMap = new Map()
     const genreList = await getGenres()
     genreList.forEach((item) => genreMap.set(item.id, item.name))
@@ -37,7 +38,7 @@ async function newDataset(d) {
             if (!apiResponse) {
                 const overview = 'Not available'
                 const poster = 'Not available'
-                const genre = 'Not available'
+                const genre = ['Not available']
                 const language = 'Not available'
                 let type = 'Not available'
                 dataset.push(new film(title, chapter, date, type, overview, poster, genre, language))
@@ -49,6 +50,9 @@ async function newDataset(d) {
                 let genre = await apiResponse.genre_ids
                 for (let i = 0; i < genre.length; i++) {
                     genre[i] = genreMap.get(genre[i])
+                }
+                if (genre == '' | genre == null | genre == [''] | genre == undefined) {
+                    genre = ['Not available']
                 }
 
                 const language = await apiResponse.original_language
@@ -62,6 +66,9 @@ async function newDataset(d) {
                 for (let i = 0; i < genre.length; i++) {
                     genre[i] = genreMap.get(genre[i])
                 }
+                if (genre == '' | genre == null | genre == [''] | genre == undefined) {
+                    genre = ['Not available']
+                }
 
                 const language = await apiResponse.original_language
                 let type = 'series'
@@ -71,6 +78,7 @@ async function newDataset(d) {
 
         // activate this block to work on Node
         fs.writeFileSync('./results.json', JSON.stringify(dataset, null, '\t'));
+
 
         return dataset
     } catch (error) {
@@ -112,10 +120,12 @@ function checkChapter(d) {
 async function getApi(type, d) {
     let searchType = type
     try {
+        // Use this URL to the CLIENT
         // const url = `https://api.themoviedb.org/3/search/${searchType}?${apikey}&query=${d}`
-        
+
         // Use the encodeURI to use Node
         const url = encodeURI(`https://api.themoviedb.org/3/search/${searchType}?${apikey}&query=${d}`)
+        
         const getUrl = await fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -129,12 +139,14 @@ async function getApi(type, d) {
 
 async function getGenres() {
     try {
+        // Use this URL to the CLIENT
         // const films = `https://api.themoviedb.org/3/genre/movie/list?${apikey}`
-        // const series = `https://api.themoviedb.org/3/genre/tv/list?${apikey}` 
-        
+        // const series = `https://api.themoviedb.org/3/genre/tv/list?${apikey}`
+
         // Use the encodeURI to use Node
         const films = encodeURI(`https://api.themoviedb.org/3/genre/movie/list?${apikey}`)
         const series = encodeURI(`https://api.themoviedb.org/3/genre/tv/list?${apikey}`)
+        
         const filmsGenre = await fetch(films)
             .then(res => res.json())
             .then(data => {
