@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    background: #191E25
+}
+
+.circles {
+    stroke: transparent;
+    stroke-width: 1.5px;
+}
+
+.circles circle:hover {
+    stroke: white;
+
+}
