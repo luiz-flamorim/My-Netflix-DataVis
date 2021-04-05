@@ -40,20 +40,12 @@ function createChart(d, width, height, radius, step, theta) {
         .attr("class", "circles");
 
 
-    let colourRange = (['#b9506eff',
+    let colourRange = ([
         '#E7442E',
-        '#111418',
-        '#3747D2',
-        '#1c2478ff',
-        '#4c54a9ff',
-        '#523883ff',
-        '#342a51ff',
-        '#1c3353',
-        '#332327ff',
-        '#80312aff',
-        '#e7442eff',
-        '#fff',
-        '#643259'
+        '#C03B2B',
+        '#A53528',
+        '#8A2F25',
+        '#47201E'
     ])
 
     let uniqueGenres = new Set(m.map(d => d.genre))
@@ -73,6 +65,7 @@ function createChart(d, width, height, radius, step, theta) {
         .attr("r", radius)
         .attr("fill", d => colour(d.genre))
         .on("mousedown", mousedowned)
+        .on("click", cardBuilder)
         .append("title")
         .text(d => d.title + ((d.chapter == "null") ? "" : " | " + d.chapter))
 
@@ -102,26 +95,51 @@ function createChart(d, width, height, radius, step, theta) {
 }
 
 
-function cardBuilder(data) {
+function cardBuilder(event, d) {
 
-    // let card = 
+    let window = document.querySelector('#modal')
+    let bg = document.querySelector('.modal-bg')
 
+    bg.classList.add('bg-active')
 
-    // let wrapper = document.createElement('div');
-    // wrapper.setAttribute("class", "col-sm-3 col-md-4 col-lg-2 h-100");
-    // wrapper.setAttribute("style", "card");
-    // wrapper.setAttribute("id", id);
-    // filmsContainer.appendChild(wrapper);
+    let card = document.createElement('div')
+    card.setAttribute('id', 'card' + '-' + d.id)
+    card.setAttribute('class', 'modal-content')
+    window.appendChild(card)
 
-    // let filmPoster = document.createElement('img');
-    // filmPoster.setAttribute("src", poster);
-    // filmPoster.setAttribute("class", "card-img-top img-fluid");
-    // filmPoster.addEventListener('click', (event) => {
-    //     filmDetail(id, title, year, overview, poster);
-    // })
-    // wrapper.appendChild(filmPoster);
+    let contentDiv = document.createElement('div')
+    card.appendChild(contentDiv)
 
-    // let cardInfo = document.createElement('div');
-    // cardInfo.setAttribute("class", "card-body flex-column");
-    // wrapper.appendChild(cardInfo);
+    let imageDiv = document.createElement('div')
+    card.appendChild(imageDiv)
+
+    let xClose = document.createElement('span')
+    xClose.innerHTML = 'X'
+    xClose.setAttribute('class', 'close')
+    card.appendChild(xClose)
+    xClose.addEventListener('click', function(){
+        window.innerHTML = ''
+        bg.classList.remove('bg-active')
+    })
+
+    let poster = document.createElement('img');
+    poster.setAttribute("src", d.poster);
+    poster.setAttribute('class', 'poster')
+    imageDiv.appendChild(poster);
+
+    let filmTitle = document.createElement('h1')
+    filmTitle.innerHTML = d.title
+    filmTitle.setAttribute('class', 'film-title')
+    contentDiv.appendChild(filmTitle)
+
+    let episode = document.createElement('h2');
+    episode.innerHTML = d.chapter
+    episode.setAttribute('class', 'film-episode')
+    contentDiv.appendChild(episode);
+
+    let filmOverview = document.createElement('p');
+    filmOverview.setAttribute('class', 'film-overview')
+    filmOverview.innerHTML = d.overview
+    contentDiv.appendChild(filmOverview);
+
 }

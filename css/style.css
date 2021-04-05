@@ -6,7 +6,8 @@
 
 body,
 html {
-    background: #191E25
+    background-color: #191E25 !important;
+    z-index: 1
 }
 
 .circles {
@@ -16,5 +17,78 @@ html {
 
 .circles circle:hover {
     stroke: white;
+}
 
+.modal-bg {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    -webkit-backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+}
+
+.bg-active{
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal{
+    position:relative;
+    background-color: white;
+    padding: 2%;
+    width:50%;
+    height:50%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* justify-content: space-around; */
+    flex-direction: column;
+
+}
+
+.close{
+    cursor: pointer;
+    position:absolute;
+    top:10px;
+    right:10px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.8em;
+    font-weight: 200;
+    color: #6f6f6f
+}
+
+.poster{
+    filter: sepia(60%)
+}
+
+.film-overview{
+    font-family: 'Jost', sans-serif;
+    font-size: 1em;
+    font-weight: 100;
+    color: #262626
+}
+
+.film-title{
+    text-transform: uppercase;
+    font-family: 'Jost', sans-serif;
+    font-size: 2em;
+    font-weight: 600;
+    color: #E7442E
+}
+
+.film-episode{
+    font-family: 'Jost', sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    color: #515151
 }
