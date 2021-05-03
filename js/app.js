@@ -79,7 +79,6 @@ async function newDataset(d) {
         // activate this block to work on Node
         fs.writeFileSync('./results.json', JSON.stringify(dataset, null, '\t'));
 
-
         return dataset
     } catch (error) {
         console.log('Error: ' + error)

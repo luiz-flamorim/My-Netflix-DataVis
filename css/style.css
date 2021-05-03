@@ -4,9 +4,19 @@
     box-sizing: border-box;
 }
 
+:root {
+    --dark:#191E25;
+    --white:#fff;
+    --main-red: #E7442E;
+    --red1: #ff8e80;
+    --red2: #e61b00;
+    --red3: #8f1100;
+    --red4: #610500;
+  }
+
 body,
 html {
-    background-color: #191E25 !important;
+    background-color: var(--dark) !important;
     z-index: 1
 }
 
@@ -41,20 +51,57 @@ html {
     opacity: 1;
 }
 
+/* containers */
+
 .modal{
-    position:relative;
-    background-color: white;
-    padding: 2%;
-    width:50%;
-    height:50%;
-    border-radius: 5px;
     display: flex;
+    position:relative;
+    background-color: rgba(255,255,255,0.1);
+    -webkit-backdrop-filter: blur(10px);
+    width:60%;
+    height:45%;
+    border-radius: 5px;
     align-items: center;
-    justify-content: center;
+    /* align-items: center; */
+    /* justify-content: space-between; */
+    /* flex-direction: row; */
     /* justify-content: space-around; */
-    flex-direction: column;
+    /* overflow-y: auto; */
+
 
 }
+
+.modal-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding: 5%;
+}
+
+.image-div{
+    display: flex;
+    object-fit: scale-down;
+}
+
+.content-div{
+    display: flex;
+    flex-direction: column;
+    margin:3%;
+}
+
+/* elements */
+.main-title{
+    text-transform: uppercase;
+    font-family: 'Jost', sans-serif;
+    font-size: 4rem;
+    font-weight: 600;
+    text-align:center;
+    color: var(--main-red);
+    align-self:flex-start;
+}
+
 
 .close{
     cursor: pointer;
@@ -64,31 +111,37 @@ html {
     font-family: 'Jost', sans-serif;
     font-size: 0.8em;
     font-weight: 200;
-    color: #6f6f6f
+    opacity: 30%;
+    color: var(--white)
 }
 
 .poster{
-    filter: sepia(60%)
-}
-
-.film-overview{
-    font-family: 'Jost', sans-serif;
-    font-size: 1em;
-    font-weight: 100;
-    color: #262626
+    filter: sepia(60%);
+    object-fit: scale-down;
 }
 
 .film-title{
     text-transform: uppercase;
     font-family: 'Jost', sans-serif;
-    font-size: 2em;
+    font-size: 2.5rem;
     font-weight: 600;
-    color: #E7442E
+    color: var(--main-red);
+    align-self:flex-start;
 }
 
 .film-episode{
     font-family: 'Jost', sans-serif;
     font-size: 1em;
     font-weight: 400;
-    color: #515151
+    color: var(--white)
+}
+
+.film-overview{
+    font-family: 'Jost', sans-serif;
+    max-height:9rem;
+    overflow-y: auto;
+    font-size: 1rem;
+    font-weight: 100;
+    color: var(--white);
+    margin-top: 5%;
 }

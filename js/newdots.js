@@ -1,6 +1,6 @@
 const height = window.innerHeight
 const width = window.innerWidth
-const radius = 5
+const radius = 4
 const step = radius * 2
 const theta = Math.PI * (3 - Math.sqrt(5))
 
@@ -41,11 +41,11 @@ function createChart(d, width, height, radius, step, theta) {
 
 
     let colourRange = ([
-        '#E7442E',
-        '#C03B2B',
-        '#A53528',
-        '#8A2F25',
-        '#47201E'
+    '#E7442E',
+    '#ff8e80',
+    '#e61b00',
+    '#8f1100',
+    '#3e0300'
     ])
 
     let uniqueGenres = new Set(m.map(d => d.genre))
@@ -67,7 +67,7 @@ function createChart(d, width, height, radius, step, theta) {
         .on("mousedown", mousedowned)
         .on("click", cardBuilder)
         .append("title")
-        .text(d => d.title + ((d.chapter == "null") ? "" : " | " + d.chapter))
+        .text(d => `${d.title}: watched on ${d.date}`)
 
     svg.call(d3.zoom()
         .extent([
@@ -107,39 +107,41 @@ function cardBuilder(event, d) {
     card.setAttribute('class', 'modal-content')
     window.appendChild(card)
 
-    let contentDiv = document.createElement('div')
-    card.appendChild(contentDiv)
-
     let imageDiv = document.createElement('div')
+    imageDiv.className = 'image-div'
     card.appendChild(imageDiv)
 
+    let contentDiv = document.createElement('div')
+    contentDiv.className = 'content-div'
+    card.appendChild(contentDiv)
+
     let xClose = document.createElement('span')
-    xClose.innerHTML = 'X'
-    xClose.setAttribute('class', 'close')
+    xClose.innerHTML = 'cancel'
+    xClose.setAttribute('class', 'close material-icons')
     card.appendChild(xClose)
-    xClose.addEventListener('click', function(){
+    xClose.addEventListener('click', function () {
         window.innerHTML = ''
         bg.classList.remove('bg-active')
     })
 
-    let poster = document.createElement('img');
-    poster.setAttribute("src", d.poster);
-    poster.setAttribute('class', 'poster')
-    imageDiv.appendChild(poster);
-
+    
     let filmTitle = document.createElement('h1')
     filmTitle.innerHTML = d.title
     filmTitle.setAttribute('class', 'film-title')
     contentDiv.appendChild(filmTitle)
-
+    
     let episode = document.createElement('h2');
     episode.innerHTML = d.chapter
     episode.setAttribute('class', 'film-episode')
     contentDiv.appendChild(episode);
-
+    
     let filmOverview = document.createElement('p');
     filmOverview.setAttribute('class', 'film-overview')
     filmOverview.innerHTML = d.overview
     contentDiv.appendChild(filmOverview);
-
+    
+    let poster = document.createElement('img');
+    poster.setAttribute("src", d.poster);
+    poster.setAttribute('class', 'poster')
+    imageDiv.appendChild(poster);
 }
