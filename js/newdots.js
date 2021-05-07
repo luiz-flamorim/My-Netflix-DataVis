@@ -39,23 +39,53 @@ function createChart(d, width, height, radius, step, theta) {
     const g = svg.append("g")
         .attr("class", "circles");
 
+        const l = svg.append("l")
+        .attr("class", "legend");
+
 
     let colourRange = ([
-    '#E7442E',
-    '#ff8e80',
-    '#e61b00',
-    '#8f1100',
-    '#3e0300'
+        '#E7442E',
+        '#ff8e80',
+        '#e61b00',
+        '#8f1100',
+        '#3e0300'
     ])
 
     let uniqueGenres = new Set(m.map(d => d.genre))
-    console.log(uniqueGenres)
+    // console.log(uniqueGenres)
 
     let br = document.createElement("br")
 
     let colour = d3.scaleOrdinal()
         .domain(uniqueGenres)
         .range(colourRange)
+
+    l.selectAll('dots')
+        .data(uniqueGenres)
+        .enter()
+        .append("circle")
+        .attr("cx", 100)
+        .attr("cy", function (d, i) {
+            return 100 + i * 25
+        })
+        .attr("r", 7)
+        .style("fill", d => colour(d.genre))
+
+    l.selectAll("mylabels")
+        .data(uniqueGenres)
+        .enter()
+        .append("text")
+        .attr("x", 120)
+        .attr("y", function (d, i) {
+            return 100 + i * 25
+        }) // 100 is where the first dot appears. 25 is the distance between dots
+        .style("fill", d => colour(d.genre))
+        .text(function (d) {
+            return d
+        })
+        .attr("text-anchor", "left")
+        .style("alignment-baseline", "middle")
+
 
     g.selectAll("circle")
         .data(m, d => d.id)
@@ -124,22 +154,22 @@ function cardBuilder(event, d) {
         bg.classList.remove('bg-active')
     })
 
-    
+
     let filmTitle = document.createElement('h1')
     filmTitle.innerHTML = d.title
     filmTitle.setAttribute('class', 'film-title')
     contentDiv.appendChild(filmTitle)
-    
+
     let episode = document.createElement('h2');
     episode.innerHTML = d.chapter
     episode.setAttribute('class', 'film-episode')
     contentDiv.appendChild(episode);
-    
+
     let filmOverview = document.createElement('p');
     filmOverview.setAttribute('class', 'film-overview')
     filmOverview.innerHTML = d.overview
     contentDiv.appendChild(filmOverview);
-    
+
     let poster = document.createElement('img');
     poster.setAttribute("src", d.poster);
     poster.setAttribute('class', 'poster')
