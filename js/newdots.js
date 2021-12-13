@@ -1,3 +1,6 @@
+// TO DO
+// mousetip - tippy
+
 const height = window.innerHeight
 const width = window.innerWidth
 const radius = 4
@@ -6,22 +9,23 @@ const theta = Math.PI * (3 - Math.sqrt(5))
 
 d3.json('js/results.json')
     .then(data => {
-        createChart(data, width, height, radius, step, theta)
+        createChart(data)
     })
 
-function createChart(d, width, height, radius, step, theta) {
+function createChart(rawData) {
 
-    let m = d.map((item, i) => {
+    let dataObject = rawData.map((item, i) => {
         const radius = step * Math.sqrt(i += 0.5);
         const a = theta * i;
         const x = width / 2 + radius * Math.cos(a);
         const y = height / 2 + radius * Math.sin(a);
+        const parsedDate = new Date(item.date)
 
         let obj = {
             id: Math.floor(i),
             title: item.title,
             chapter: item.chapter,
-            date: item.date,
+            date: parsedDate,
             type: item.type,
             overview: item.overview,
             poster: item.poster,
@@ -39,65 +43,65 @@ function createChart(d, width, height, radius, step, theta) {
     const g = svg.append("g")
         .attr("class", "circles");
 
-        const l = svg.append("l")
-        .attr("class", "legend");
+        // Map for the unique genres: needs value and key for colour scale
+    let uniqueGenres = new Map()
+    let valueKey = 1
+    dataObject.map(item => {
+        if (!uniqueGenres.has(item.genre)) {
+            uniqueGenres.set(item.genre, valueKey)
+            valueKey++
+        }
+    })
 
+    let colour = d3.scaleSequential()
+        .domain([0, uniqueGenres.size])
+        .interpolator(d3.interpolateViridis)
 
-    let colourRange = ([
-        '#E7442E',
-        '#ff8e80',
-        '#e61b00',
-        '#8f1100',
-        '#3e0300'
-    ])
-
-    let uniqueGenres = new Set(m.map(d => d.genre))
-    // console.log(uniqueGenres)
-
-    let br = document.createElement("br")
-
-    let colour = d3.scaleOrdinal()
-        .domain(uniqueGenres)
-        .range(colourRange)
-
-    l.selectAll('dots')
-        .data(uniqueGenres)
-        .enter()
-        .append("circle")
-        .attr("cx", 100)
-        .attr("cy", function (d, i) {
-            return 100 + i * 25
-        })
-        .attr("r", 7)
-        .style("fill", d => colour(d.genre))
-
-    l.selectAll("mylabels")
-        .data(uniqueGenres)
-        .enter()
-        .append("text")
-        .attr("x", 120)
-        .attr("y", function (d, i) {
-            return 100 + i * 25
-        }) // 100 is where the first dot appears. 25 is the distance between dots
-        .style("fill", d => colour(d.genre))
-        .text(function (d) {
-            return d
-        })
-        .attr("text-anchor", "left")
-        .style("alignment-baseline", "middle")
-
-
-    g.selectAll("circle")
-        .data(m, d => d.id)
+    // round diagram
+    let allCircles = g.selectAll("circle")
+        .data(dataObject, d => d.id)
         .join("circle")
+        .attr("cx", width / 2)
+        .attr("cy", height / 2)
+        .attr("r", 0)
+        .attr("fill", d => colour(uniqueGenres.get(d.genre)))
+        .attr('data-tippy-content', (d, i) => {
+            return d.title
+        })
+        .on("click", cardBuilder)
+        .on('mouseover', function () {
+            allCircles.transition()
+                .duration(100)
+                .attr("opacity", 0.5)
+            d3.select(this)
+                .transition()
+                .duration(100)
+                .style("cursor", "pointer")
+                .attr("opacity", 1)
+                .attr("r", radius * 2)
+        })
+        .on('mouseout', function () {
+            allCircles.transition()
+                .duration(100)
+                .attr("opacity", 1)
+            d3.select(this)
+                .transition()
+                .duration(100)
+                .attr("r", radius)
+        })
+
+    allCircles.transition()
+        .delay((d, i) => i)
+        .duration(350)
+        .attr("r", radius)
         .attr("cx", d => d.x)
         .attr("cy", d => d.y)
-        .attr("r", radius)
-        .attr("fill", d => colour(d.genre))
-        .on("mousedown", mousedowned)
-        .on("click", cardBuilder)
-        .append("title")
-        .text(d => `${d.title}: watched on ${d.date}`)
+
+    tippy(allCircles.nodes(), {
+        inertia: true,
+        animateFill: true,
+        offset: [0, 20]
+    })
 
     svg.call(d3.zoom()
         .extent([
@@ -107,23 +111,34 @@ function createChart(d, width, height, radius, step, theta) {
         .scaleExtent([1, 8])
         .on("zoom", zoomed));
 
-    function mousedowned(event, d) {
-        d3.select(this).transition()
-            .attr("fill", "white")
-            .attr("r", radius * 3)
-            .transition()
-            .attr("fill", d => colour(d.genre))
-            .attr("r", radius)
-    }
-
     function zoomed({
         transform
     }) {
         g.attr("transform", transform);
     }
-    return svg.node();
+
+
+    // graph the Years from here
+
+    // let uniqueYears = new Set(m.map(d => d.date.getFullYear()))
+    // uniqueYears = Array.from(uniqueYears)
+
+    // let yearScale = d3.scaleBand()
+    //     .domain(uniqueYears)
+    //     .range([height, 0])
+
+    // let yearContainer = svg.append('g')
+    //     .attr('transform', `translate(0, 0)`)
+
+    // let yearAxis = yearContainer.append('g')
+    //     .call(d3.axisLeft(yearScale))
+    //     // .classed('yearAxis', 'true')
+    //     .attr('class', 'yearAxis')
+
 }
 
+
+// functions
 
 function cardBuilder(event, d) {
 
@@ -153,7 +168,6 @@ function cardBuilder(event, d) {
         window.innerHTML = ''
         bg.classList.remove('bg-active')
     })
-
 
     let filmTitle = document.createElement('h1')
     filmTitle.innerHTML = d.title

@@ -21,17 +21,17 @@ html {
 }
 
 #dots-diagram{
-    padding:3rem;
+    padding: 3rem;
 }
 
-.circles {
+/* .circles {
     stroke: transparent;
     stroke-width: 1.5px;
 }
 
 .circles circle:hover {
     stroke: white;
-}
+} */
 
 .modal-bg {
     position: fixed;
@@ -102,7 +102,6 @@ html {
     align-self:flex-start;
 }
 
-
 .close{
     cursor: pointer;
     position:absolute;
@@ -144,4 +143,17 @@ html {
     font-weight: 100;
     color: var(--white);
     margin-top: 5%;
+}
+
+/* .yearAxis .tick text{
+    fill: #fff;
+    stroke:#fff;
+    color:#fff;
+
+} */
+.yearAxis, 
+.domain  {
+    fill: var(--white) !important;
+    stroke:var(--white) !important;
+    color:var(--white) !important;
 }
