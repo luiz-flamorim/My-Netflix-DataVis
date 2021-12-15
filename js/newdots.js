@@ -3,6 +3,7 @@
 // legend: centre and make it responsive - viewbox is not working because the width/ height of the div is different from window.inner...
 // what happens when the user click on a film that doens't have information? address this with a different pop up (?)
 // grid diagram: reposition
+// put some legend about the size of the bubbles - size = date
 
 const height = window.innerHeight * 0.8
 const width = window.innerWidth
@@ -236,6 +237,7 @@ function createChart(rawData) {
 
     function legendClick(catName) {
         let statsDiv = document.querySelector('#stats')
+        statsDiv.setAttribute('data-tippy-content', 'close')
         statsDiv.innerHTML = ''
         statsDiv.style.display = 'block'
 
@@ -253,6 +255,12 @@ function createChart(rawData) {
                 .transition()
                 .duration(1000)
                 .attr("opacity", 1)
+        })
+
+        tippy(statsDiv, {
+            inertia: true,
+            animateFill: true,
+            followCursor: true,
         })
     }
 }
