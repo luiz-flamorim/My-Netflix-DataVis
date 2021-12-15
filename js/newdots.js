@@ -4,9 +4,25 @@
 // what happens when the user click on a film that doens't have information? address this with a different pop up (?)
 // grid diagram: reposition
 // put some legend about the size of the bubbles - size = date
+// zoom - fix it
+// phillotaxix to bar chart
 
-const height = window.innerHeight * 0.8
-const width = window.innerWidth
+const h = 1000
+const w = 1000
+const m = {
+    top: 200,
+    bottom: 200,
+    left: 200,
+    right: 200,
+}
+
+const width = w - (m.left + m.right)
+const height = h - (m.top + m.bottom)
+
+let chartContainer = d3.select('#diagram-container')
+    .style('width', '1000px')
+    .style('height', '1000px')
+
 const radius = 4
 const step = radius * 2
 const theta = Math.PI * (3 - Math.sqrt(5))
@@ -19,12 +35,11 @@ d3.json('js/results.json')
 
 function createChart(rawData) {
 
-    console.log(rawData)
     let dataObject = rawData.map((item, i) => {
-        const r = (step + (i * 0.001)) * Math.sqrt(i += 0.5);
+        const spacing = (5 + (i * 0.0015)) * Math.sqrt(i += 0.5);
         const a = theta * i;
-        const x = width / 2 + r * Math.cos(a);
-        const y = height / 2 + r * Math.sin(a);
+        const x = width / 2 + spacing * Math.cos(a);
+        const y = height / 2 + spacing * Math.sin(a);
         const parsedDate = new Date(item.date)
 
         let obj = {
@@ -40,17 +55,22 @@ function createChart(rawData) {
             x: x,
             y: y
         }
-        if (!mapRadius.has(r)) {
-            mapRadius.set(r)
-        }
+        // if (!mapRadius.has(r)) {
+        //     mapRadius.set(r)
+        // }
         return obj
     })
 
+    let maxX = d3.max(dataObject.map(d => d.x))
+    let maxY = d3.max(dataObject.map(d => d.y))
+
+
     const svg = d3.select('#dots')
-        .attr("viewBox", [0, 0, width, height]);
+        .attr("viewBox", [0, 0, w, h]);
 
     const g = svg.append("g")
-        .attr("class", "circles");
+        .attr("class", "circles")
+        .attr("transform", `translate(${m.left},${m.top})`)
 
     // Map for the unique genres: needs value and key for colour scale
     let uniqueGenres = new Map()
@@ -75,7 +95,7 @@ function createChart(rawData) {
     // scale for years
     let scaleYears = d3.scaleLinear()
         .domain(uniqueYears)
-        .range([3, 3.5]);
+        .range([2, 2.5]);
 
     // PHYLLOTAXIS DIARGRAM
     let allCircles = g.selectAll("circle")
@@ -146,27 +166,18 @@ function createChart(rawData) {
     // Legend
     // ref: https://bl.ocks.org/jkeohan/b8a3a9510036e40d3a4e
 
-    const legendC = d3.select('#legend')
-        .append('g')
+    const legendC = svg.append('g')
         .attr('class', 'legend')
 
+
     let dataL = 0;
-    let offset = 50;
+    let offset = 40;
 
     let legend = legendC.selectAll('.legend')
         .data(uniqueGenres)
         .enter().append('g')
         .attr("class", "legend")
-        .attr("transform", function (d, i) {
-            if (i === 0) {
-                dataL = (d[0].length * 6) + offset
-                return "translate(0,5)"
-            } else {
-                let newdataL = dataL
-                dataL += (d[0].length * 6) + offset
-                return "translate(" + (newdataL) + ",5)"
-            }
-        })
+
 
     let legendCircle = legend.append('circle')
         .attr("cx", 5)
@@ -185,6 +196,24 @@ function createChart(rawData) {
         .style("font-size", 13)
         .style("font-weigth", 200)
         .style('fill', 'white')
+
+
+
+    legend.attr("transform", function (d, i) {
+        let bBoxWidth = d3.select(this)
+            .select('text')
+            .node()
+            .getBBox().width
+        if (i === 0) {
+
+            dataL = bBoxWidth + offset
+            return "translate(0,5)"
+        } else {
+            let newdataL = dataL
+            dataL += bBoxWidth + offset
+            return "translate(" + (newdataL) + ",5)"
+        }
+    })
 
     legendCircle.on('mouseover', function (d, i) {
 
