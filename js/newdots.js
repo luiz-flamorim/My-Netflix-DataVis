@@ -10,10 +10,10 @@
 const h = 1000
 const w = 1000
 const m = {
-    top: 200,
-    bottom: 200,
-    left: 200,
-    right: 200,
+    top: 30,
+    bottom: 30,
+    left: 30,
+    right: 30,
 }
 
 const width = w - (m.left + m.right)
@@ -26,7 +26,6 @@ let chartContainer = d3.select('#diagram-container')
 const radius = 4
 const step = radius * 2
 const theta = Math.PI * (3 - Math.sqrt(5))
-let mapRadius = new Map()
 
 d3.json('js/results.json')
     .then(data => {
@@ -55,9 +54,6 @@ function createChart(rawData) {
             x: x,
             y: y
         }
-        // if (!mapRadius.has(r)) {
-        //     mapRadius.set(r)
-        // }
         return obj
     })
 
@@ -65,12 +61,81 @@ function createChart(rawData) {
     let maxY = d3.max(dataObject.map(d => d.y))
 
 
+    // map for the unique years
+    let allYears = d3.group(dataObject, d => d.date.getFullYear())
+    let uniqueYears = Array.from(allYears.keys())
+
+    // scale for years
+    let scaleYears = d3.scaleLinear()
+        .domain(uniqueYears)
+        .range([2, 2.5]);
+
+    // scaleBand - for the bar chart
+    let yearBand = d3.scaleBand()
+        .domain(uniqueYears)
+        .range([m.top, height])
+        .padding(0.2)
+
+    // finding the year I watched more films
+    let mostWatchedList = []
+    for (const element of allYears) {
+        mostWatchedList.push(element[1].length)
+    }
+    let theMostWatched = d3.max(mostWatchedList)
+
+    // find a factor
+    // think about a prime number
+    // how to decide which factor to get?
+    // let testArray = [5,6,7,8,9,10]
+    // for(let i = 1; i <= theMostWatched; i++) {
+    //     if(theMostWatched % i == 0) {
+    //         console.log(i);
+    //     }
+    // }
+
+    let gridRows = 6
+    let gridLines = 74
+
+    // making the x scale for the grid
+    let yearScales = {};
+    uniqueYears.forEach(year => {
+        let gridXScale = d3.scaleBand()
+            .domain(d3.range(gridLines))
+            .range([m.left, width - m.right])
+
+        let gridYScale = d3.scaleBand()
+            .domain(d3.range(gridRows))
+            .range([yearBand(year), yearBand(year) + yearBand.bandwidth()])
+
+
+            // saves all the scales inside of the object
+        yearScales[year] = {
+            x: gridXScale,
+            y: gridYScale
+        }
+    })
+
+    // console.log(yearScales)
+
+
+    // set the main SVG
     const svg = d3.select('#dots')
         .attr("viewBox", [0, 0, w, h]);
 
-    const g = svg.append("g")
+    // circles for the Phillotax
+    let g = svg.append("g")
         .attr("class", "circles")
         .attr("transform", `translate(${m.left},${m.top})`)
+
+    let yearContainer = svg.append("g")
+        .attr("class", "yearContainer")
+        .attr("transform", `translate(${m.left},${m.top})`)
+
+    let yearAxis = yearContainer.append('g')
+        .classed("yearAxis", true)
+        .call(d3.axisLeft(yearBand))
+        .style('opacity', 1)
+
 
     // Map for the unique genres: needs value and key for colour scale
     let uniqueGenres = new Map()
@@ -88,79 +153,116 @@ function createChart(rawData) {
         .domain([0, uniqueGenres.size])
         .interpolator(d3.interpolateCool)
 
-    // map for the unique years
-    let allYears = d3.group(dataObject, d => d.date.getFullYear())
-    let uniqueYears = Array.from(allYears.keys())
+        update('bars')
 
-    // scale for years
-    let scaleYears = d3.scaleLinear()
-        .domain(uniqueYears)
-        .range([2, 2.5]);
+
+    function update(chartType) {
+
+        for(const year of allYears){
+            let yearData = year[1]
+
+            let xScale = yearScales[year[0]].x
+            let yScale = yearScales[year[0]].y
+
+            yearContainer.selectAll(`.circles-${year[0]}`)
+                .data(yearData, d => d.id)
+                .join(
+                    enter => enter.append('circle')
+                    .classed(`.circles-${year[0]}`, true)
+                    .style('opacity', 1)
+                    .attr('fill', d => colour(uniqueGenres.get(d.genre)))
+                    // .transition()
+                    // .ease(d3.easeCircle)
+                    // .delay((d, i) => i * 2)
+                    // .duration(750)
+                    .attr("cx", (d,i) => chartType == "bars" ? xScale(Math.floor(i/gridRows)) : d.x)
+                    .attr("cy", (d,i) => chartType == "bars" ? yScale(i%gridRows) : d.y)
+                    
+                    .attr('r', 4),
+                    // update => update
+                )
+
+
+        }
+
+    }
 
     // PHYLLOTAXIS DIARGRAM
-    let allCircles = g.selectAll("circle")
-        .data(dataObject, d => d.id)
-        .join("circle")
-        .attr("cx", width / 2)
-        .attr("cy", height / 2)
-        .attr("r", 0)
-        .attr("fill", 'black')
-        .attr('data-tippy-content', (d, i) => {
-            return d.title
-        })
-        .on("click", cardBuilder)
-        .on('mouseover', function () {
-            allCircles.attr("opacity", 1).transition()
-                .duration(750)
-                .attr("opacity", 0.2)
-            d3.select(this)
-                .transition()
-                .duration(750)
-                .style("cursor", "pointer")
-                .attr("opacity", 1)
-                .attr("r", d => scaleYears(d.date.getFullYear()) * 2)
-        })
-        .on('mouseout', function () {
-            allCircles.transition()
-                .duration(750)
-                .attr("opacity", 1)
-            d3.select(this)
-                .transition()
-                .duration(100)
-                .attr("r", d => scaleYears(d.date.getFullYear()))
-        })
+    // let allCircles = g.selectAll("circle")
+    //     .data(dataObject, d => d.id)
+    //     .join("circle")
+    //     .attr("cx", width / 2)
+    //     .attr("cy", height / 2)
+    //     .attr("r", 0)
+    //     .attr("fill", 'black')
+    //     .attr('data-tippy-content', (d, i) => {
+    //         return d.title
+    //     })
+    //     .on("click", cardBuilder)
+    //     .on('mouseover', function () {
+    //         allCircles.attr("opacity", 1).transition()
+    //             .duration(750)
+    //             .attr("opacity", 0.2)
+    //         d3.select(this)
+    //             .transition()
+    //             .duration(750)
+    //             .style("cursor", "pointer")
+    //             .attr("opacity", 1)
+    //             .attr("r", d => scaleYears(d.date.getFullYear()) * 2)
+    //     })
+    //     .on('mouseout', function () {
+    //         allCircles.transition()
+    //             .duration(750)
+    //             .attr("opacity", 1)
+    //         d3.select(this)
+    //             .transition()
+    //             .duration(100)
+    //             .attr("r", d => scaleYears(d.date.getFullYear()))
+    //     })
 
-    allCircles.attr("opacity", 1)
-        .transition()
-        .ease(d3.easeCircle)
-        .delay((d, i) => i * 2)
-        .duration(750)
-        .attr("fill", d => colour(uniqueGenres.get(d.genre)))
-        // the fill can vary with the index as well
-        // .attr("fill", (d, i) => d3.hsl((step * Math.sqrt(i += 0.5)) % 50, 10, 255))
-        .attr("r", d => scaleYears(d.date.getFullYear()))
-        .attr("cx", d => d.x)
-        .attr("cy", d => d.y)
+    // allCircles.attr("opacity", 1)
+    //     .transition()
+    //     .ease(d3.easeCircle)
+    //     .delay((d, i) => i * 2)
+    //     .duration(750)
+    //     .attr("fill", d => colour(uniqueGenres.get(d.genre)))
+    //     // the fill can vary with the index as well
+    //     // .attr("fill", (d, i) => d3.hsl((step * Math.sqrt(i += 0.5)) % 50, 10, 255))
+    //     .attr("r", d => scaleYears(d.date.getFullYear()))
+    //     // .attr("cx", d => d.x)
+    //     // .attr("cy", d => d.y)
+    //     .attr("cx", d => {
+    //         // let thisYear = d.date.getFullYear()
+    //         // yearScales[thisYear].x(allYears[thisYear])
+    //     })
+    //     .attr("cy", d => d.y)
 
-    tippy(allCircles.nodes(), {
-        inertia: true,
-        animateFill: true,
-        offset: [0, 20]
-    })
+    // // console.log(allYears)
 
-    svg.call(d3.zoom()
-        .extent([
-            [0, 0],
-            [width, height]
-        ])
-        .scaleExtent([1, 8])
-        .on("zoom", zoomed));
+    // tippy(allCircles.nodes(), {
+    //     inertia: true,
+    //     animateFill: true,
+    //     offset: [0, 20]
+    // })
 
-    function zoomed({
-        transform
-    }) {
-        g.attr("transform", transform);
-    }
+    // svg.call(d3.zoom()
+    //     .extent([
+    //         [0, 0],
+    //         [width, height]
+    //     ])
+    //     .scaleExtent([1, 8])
+    //     .on("zoom", zoomed));
+
+    // function zoomed({
+    //     transform
+    // }) {
+    //     g.attr("transform", transform);
+    // }
+
+
+
+
+
 
 
     // Legend
@@ -303,23 +405,6 @@ function createChart(rawData) {
 
 
 
-
-// graph the Years from here
-
-// let uniqueYears = new Set(m.map(d => d.date.getFullYear()))
-// uniqueYears = Array.from(uniqueYears)
-
-// let yearScale = d3.scaleBand()
-//     .domain(uniqueYears)
-//     .range([height, 0])
-
-// let yearContainer = svg.append('g')
-//     .attr('transform', `translate(0, 0)`)
-
-// let yearAxis = yearContainer.append('g')
-//     .call(d3.axisLeft(yearScale))
-//     // .classed('yearAxis', 'true')
-//     .attr('class', 'yearAxis')
 
 
 
