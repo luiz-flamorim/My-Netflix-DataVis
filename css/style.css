@@ -218,3 +218,8 @@ p {
     font-weight: 100;
     text-align: left;
 }
+
+/* D3 axis */
+.domain{
+    display: none;
+}

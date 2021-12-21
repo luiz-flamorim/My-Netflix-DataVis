@@ -1,11 +1,8 @@
 // TO DO
-// size of the overall circle chart(phyllotax) to vary: if the user has more films, the bubbles needs to be smaller.
-// legend: centre and make it responsive - viewbox is not working because the width/ height of the div is different from window.inner...
 // what happens when the user click on a film that doens't have information? address this with a different pop up (?)
-// grid diagram: reposition
-// put some legend about the size of the bubbles - size = date
-// zoom - fix it
+// put some legend about the size of the bubbles - size = date => phillotax
 // phillotaxix to bar chart
+// problem when hover most recent bubbles on bar chart, on mouse out the bubbles come back smaller
 
 const h = 1000
 const w = 1000
@@ -31,8 +28,6 @@ d3.json('js/results.json')
     .then(data => {
         createChart(data)
     })
-
-
 
 function createChart(rawData) {
 
@@ -63,26 +58,6 @@ function createChart(rawData) {
         }
     })
 
-
-    // find The factor
-    // think about a prime number
-    // how to decide which factor to get?
-
-    // finding the year I watched more films
-    // let mostWatchedList = []
-    // for (const element of allYears) {
-    //     mostWatchedList.push(element[1].length)
-    // }
-
-    // let theMostWatched = d3.max(mostWatchedList)
-    // let testArray = [5,6,7,8,9,10]
-    // for(let i = 1; i <= theMostWatched; i++) {
-    //     if(theMostWatched % i == 0) {
-    //         console.log(i);
-    //     }
-    // }
-
-
     // making the x scale for the grid diagram
     let yearScales = {};
     uniqueYears.forEach(year => {
@@ -92,7 +67,7 @@ function createChart(rawData) {
 
         let gridYScale = d3.scaleBand()
             .domain(d3.range(gridRows))
-            .range([yearBand(year), yearBand(year) + yearBand.bandwidth()])
+            .range([yearBand(year) + 10, yearBand(year) + yearBand.bandwidth()])
 
         // saves all the scales inside of the object
         yearScales[year] = {
@@ -105,12 +80,7 @@ function createChart(rawData) {
     const svg = d3.select('#dots')
         .attr("viewBox", [0, 0, w, h]);
 
-    // circles for the Phillotax
-    // let g = svg.append("g")
-    //     .attr("class", "circles")
-    //     .attr("transform", `translate(${m.left},${m.top})`)
-
-    // contauner for the grid diagram
+    // Container for the grid diagram
     let diagramContainer = svg.append("g")
         .attr("class", "diagram-container")
         .attr("transform", `translate(${m.left},${m.top})`)
@@ -118,10 +88,12 @@ function createChart(rawData) {
     // axis for the grid diagram
     let yearAxis = svg.append('g')
         .classed("year-axis", true)
-        .call(d3.axisLeft(yearBand))
+        .call(d3.axisLeft(yearBand)
+            .tickPadding(5)
+            .tickSize(0)
+        )
         .style('opacity', 0)
         .attr("transform", `translate(${m.left * 1.5},${m.top})`)
-
 
     // Scale for the colours
     // interpolators: https://github.com/d3/d3-scale-chromatic
@@ -137,20 +109,19 @@ function createChart(rawData) {
     let phillo = document.querySelector('#phillo')
     phillo.addEventListener('click', function () {
         yearAxis.transition()
-        .duration(tDuration)
-        .style('opacity', 0)
-        .attr("transform", `translate(0,${m.top})`)
+            .duration(tDuration)
+            .style('opacity', 0)
+            .attr("transform", `translate(0,${m.top})`)
 
-
-        update('phillo')        
+        update('phillo')
     })
 
     let bars = document.querySelector('#bar')
     bars.addEventListener('click', function () {
         yearAxis.transition()
-        .duration(tDuration)
-        .style('opacity', 1)
-        .attr("transform", `translate(${m.left * 1.5},${m.top})`)
+            .duration(tDuration)
+            .style('opacity', 1)
+            .attr("transform", `translate(${m.left * 1.5},${m.top})`)
 
         update('bars')
     })
@@ -209,6 +180,7 @@ function createChart(rawData) {
                         .attr("r", d => chartType == "bars" ? 4 : scaleYears(d.date.getFullYear()))
                         .style('opacity', 1)
                     ),
+
                     exit => exit.remove()
                 )
         }
@@ -290,7 +262,8 @@ function createChart(rawData) {
                 .duration(tDuration)
                 .style("cursor", "pointer")
                 .attr("opacity", 1)
-                .attr("r", d => 8)
+                .attr("r", d => chartType == "bars" ? 8 : scaleYears(d.date.getFullYear()) * 2)
+
         })
         .on('mouseout', function () {
             legendCircle.transition()
@@ -304,8 +277,8 @@ function createChart(rawData) {
             d3.select(this)
                 .transition()
                 .duration(100)
-                .attr("r", d => 5)
-        })
+                .attr("r", d => chartType == "bars" ? 4 : scaleYears(d.date.getFullYear()))
+            })
         .on('click', function (d, i) {
 
             let clicked = d3.select(this)
