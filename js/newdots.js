@@ -19,47 +19,24 @@ const m = {
 const width = w - (m.left + m.right)
 const height = h - (m.top + m.bottom)
 
-let chartContainer = d3.select('#diagram-container')
+let gridRows = 6
+let gridLines = 74
+let tDuration = 750
+
+let chartContainer = d3.select('#svg-container')
     .style('width', '1000px')
     .style('height', '1000px')
-
-const radius = 4
-const step = radius * 2
-const theta = Math.PI * (3 - Math.sqrt(5))
 
 d3.json('js/results.json')
     .then(data => {
         createChart(data)
     })
 
+
+
 function createChart(rawData) {
 
-    let dataObject = rawData.map((item, i) => {
-        const spacing = (5 + (i * 0.0015)) * Math.sqrt(i += 0.5);
-        const a = theta * i;
-        const x = width / 2 + spacing * Math.cos(a);
-        const y = height / 2 + spacing * Math.sin(a);
-        const parsedDate = new Date(item.date)
-
-        let obj = {
-            id: Math.floor(i),
-            title: item.title,
-            chapter: item.chapter,
-            date: parsedDate,
-            type: item.type,
-            overview: item.overview,
-            poster: item.poster,
-            genre: item.genre[0],
-            language: item.language,
-            x: x,
-            y: y
-        }
-        return obj
-    })
-
-    let maxX = d3.max(dataObject.map(d => d.x))
-    let maxY = d3.max(dataObject.map(d => d.y))
-
+    let dataObject = buildDataObject(rawData)
 
     // map for the unique years
     let allYears = d3.group(dataObject, d => d.date.getFullYear())
@@ -76,67 +53,6 @@ function createChart(rawData) {
         .range([m.top, height])
         .padding(0.2)
 
-    // finding the year I watched more films
-    let mostWatchedList = []
-    for (const element of allYears) {
-        mostWatchedList.push(element[1].length)
-    }
-    let theMostWatched = d3.max(mostWatchedList)
-
-    // find a factor
-    // think about a prime number
-    // how to decide which factor to get?
-    // let testArray = [5,6,7,8,9,10]
-    // for(let i = 1; i <= theMostWatched; i++) {
-    //     if(theMostWatched % i == 0) {
-    //         console.log(i);
-    //     }
-    // }
-
-    let gridRows = 6
-    let gridLines = 74
-
-    // making the x scale for the grid
-    let yearScales = {};
-    uniqueYears.forEach(year => {
-        let gridXScale = d3.scaleBand()
-            .domain(d3.range(gridLines))
-            .range([m.left, width - m.right])
-
-        let gridYScale = d3.scaleBand()
-            .domain(d3.range(gridRows))
-            .range([yearBand(year), yearBand(year) + yearBand.bandwidth()])
-
-
-            // saves all the scales inside of the object
-        yearScales[year] = {
-            x: gridXScale,
-            y: gridYScale
-        }
-    })
-
-    // console.log(yearScales)
-
-
-    // set the main SVG
-    const svg = d3.select('#dots')
-        .attr("viewBox", [0, 0, w, h]);
-
-    // circles for the Phillotax
-    let g = svg.append("g")
-        .attr("class", "circles")
-        .attr("transform", `translate(${m.left},${m.top})`)
-
-    let yearContainer = svg.append("g")
-        .attr("class", "yearContainer")
-        .attr("transform", `translate(${m.left},${m.top})`)
-
-    let yearAxis = yearContainer.append('g')
-        .classed("yearAxis", true)
-        .call(d3.axisLeft(yearBand))
-        .style('opacity', 1)
-
-
     // Map for the unique genres: needs value and key for colour scale
     let uniqueGenres = new Map()
     let valueKey = 1
@@ -147,133 +63,172 @@ function createChart(rawData) {
         }
     })
 
+
+    // find The factor
+    // think about a prime number
+    // how to decide which factor to get?
+
+    // finding the year I watched more films
+    // let mostWatchedList = []
+    // for (const element of allYears) {
+    //     mostWatchedList.push(element[1].length)
+    // }
+
+    // let theMostWatched = d3.max(mostWatchedList)
+    // let testArray = [5,6,7,8,9,10]
+    // for(let i = 1; i <= theMostWatched; i++) {
+    //     if(theMostWatched % i == 0) {
+    //         console.log(i);
+    //     }
+    // }
+
+
+    // making the x scale for the grid diagram
+    let yearScales = {};
+    uniqueYears.forEach(year => {
+        let gridXScale = d3.scaleBand()
+            .domain(d3.range(gridLines))
+            .range([m.left, width - m.right])
+
+        let gridYScale = d3.scaleBand()
+            .domain(d3.range(gridRows))
+            .range([yearBand(year), yearBand(year) + yearBand.bandwidth()])
+
+        // saves all the scales inside of the object
+        yearScales[year] = {
+            x: gridXScale,
+            y: gridYScale
+        }
+    })
+
+    // set the main SVG
+    const svg = d3.select('#dots')
+        .attr("viewBox", [0, 0, w, h]);
+
+    // circles for the Phillotax
+    // let g = svg.append("g")
+    //     .attr("class", "circles")
+    //     .attr("transform", `translate(${m.left},${m.top})`)
+
+    // contauner for the grid diagram
+    let diagramContainer = svg.append("g")
+        .attr("class", "diagram-container")
+        .attr("transform", `translate(${m.left},${m.top})`)
+
+    // axis for the grid diagram
+    let yearAxis = svg.append('g')
+        .classed("year-axis", true)
+        .call(d3.axisLeft(yearBand))
+        .style('opacity', 0)
+        .attr("transform", `translate(${m.left * 1.5},${m.top})`)
+
+
     // Scale for the colours
     // interpolators: https://github.com/d3/d3-scale-chromatic
     let colour = d3.scaleSequential()
         .domain([0, uniqueGenres.size])
         .interpolator(d3.interpolateCool)
 
+    let chartContainer = diagramContainer.append('g')
+        .attr("class", "chartContainer")
+
+    update('phillo')
+
+    let phillo = document.querySelector('#phillo')
+    phillo.addEventListener('click', function () {
+        yearAxis.transition()
+        .duration(tDuration)
+        .style('opacity', 0)
+        .attr("transform", `translate(0,${m.top})`)
+
+
+        update('phillo')        
+    })
+
+    let bars = document.querySelector('#bar')
+    bars.addEventListener('click', function () {
+        yearAxis.transition()
+        .duration(tDuration)
+        .style('opacity', 1)
+        .attr("transform", `translate(${m.left * 1.5},${m.top})`)
+
         update('bars')
+    })
 
 
     function update(chartType) {
 
-        for(const year of allYears){
+        for (const year of allYears) {
             let yearData = year[1]
-
             let xScale = yearScales[year[0]].x
             let yScale = yearScales[year[0]].y
 
-            yearContainer.selectAll(`.circles-${year[0]}`)
+            chartContainer.selectAll(`.circles-${year[0]}`)
                 .data(yearData, d => d.id)
                 .join(
                     enter => enter.append('circle')
-                    .classed(`.circles-${year[0]}`, true)
-                    .style('opacity', 1)
+                    .classed(`circles-${year[0]}`, true)
+                    .style('opacity', 0)
                     .attr('fill', d => colour(uniqueGenres.get(d.genre)))
-                    // .transition()
-                    // .ease(d3.easeCircle)
-                    // .delay((d, i) => i * 2)
-                    // .duration(750)
-                    .attr("cx", (d,i) => chartType == "bars" ? xScale(Math.floor(i/gridRows)) : d.x)
-                    .attr("cy", (d,i) => chartType == "bars" ? yScale(i%gridRows) : d.y)
-                    
-                    .attr('r', 4),
-                    // update => update
+                    .attr("cx", width / 2)
+                    .attr("cy", height / 2)
+                    .attr('data-tippy-content', d => d.title)
+                    .on("click", cardBuilder)
+                    .on('mouseover', function () {
+                        d3.select(this)
+                            .transition()
+                            .duration(tDuration / 5)
+                            .style("cursor", "pointer")
+                            .attr("r", d => chartType == "bars" ? 8 : scaleYears(d.date.getFullYear()) * 2)
+                    })
+                    .on('mouseout', function () {
+                        d3.select(this)
+                            .transition()
+                            .duration(tDuration / 5)
+                            .style("cursor", "pointer")
+                            .attr("r", d => chartType == "bars" ? 4 : scaleYears(d.date.getFullYear()))
+                    })
+
+                    .call(enter => enter.transition()
+                        .ease(d3.easeCircle)
+                        .delay((d, i) => i * 3)
+                        .duration(tDuration)
+                        .attr("cx", (d, i) => chartType == "bars" ? xScale(Math.floor(i / gridRows)) : d.x)
+                        .attr("cy", (d, i) => chartType == "bars" ? yScale(i % gridRows) : d.y)
+                        .attr("r", d => chartType == "bars" ? 4 : scaleYears(d.date.getFullYear()))
+                        .style('opacity', 1)
+                    ),
+
+                    update => update
+                    .call(update => update.transition()
+                        .ease(d3.easeCircle)
+                        .delay((d, i) => i * 2)
+                        .duration(tDuration)
+                        .attr("cx", (d, i) => chartType == "bars" ? xScale(Math.floor(i / gridRows)) : d.x)
+                        .attr("cy", (d, i) => chartType == "bars" ? yScale(i % gridRows) : d.y)
+                        .attr("r", d => chartType == "bars" ? 4 : scaleYears(d.date.getFullYear()))
+                        .style('opacity', 1)
+                    ),
+                    exit => exit.remove()
                 )
-
-
         }
 
+        tippy('[data-tippy-content]', {
+            content: 'Global content',
+            animateFill: true,
+        })
     }
-
-    // PHYLLOTAXIS DIARGRAM
-    // let allCircles = g.selectAll("circle")
-    //     .data(dataObject, d => d.id)
-    //     .join("circle")
-    //     .attr("cx", width / 2)
-    //     .attr("cy", height / 2)
-    //     .attr("r", 0)
-    //     .attr("fill", 'black')
-    //     .attr('data-tippy-content', (d, i) => {
-    //         return d.title
-    //     })
-    //     .on("click", cardBuilder)
-    //     .on('mouseover', function () {
-    //         allCircles.attr("opacity", 1).transition()
-    //             .duration(750)
-    //             .attr("opacity", 0.2)
-    //         d3.select(this)
-    //             .transition()
-    //             .duration(750)
-    //             .style("cursor", "pointer")
-    //             .attr("opacity", 1)
-    //             .attr("r", d => scaleYears(d.date.getFullYear()) * 2)
-    //     })
-    //     .on('mouseout', function () {
-    //         allCircles.transition()
-    //             .duration(750)
-    //             .attr("opacity", 1)
-    //         d3.select(this)
-    //             .transition()
-    //             .duration(100)
-    //             .attr("r", d => scaleYears(d.date.getFullYear()))
-    //     })
-
-    // allCircles.attr("opacity", 1)
-    //     .transition()
-    //     .ease(d3.easeCircle)
-    //     .delay((d, i) => i * 2)
-    //     .duration(750)
-    //     .attr("fill", d => colour(uniqueGenres.get(d.genre)))
-    //     // the fill can vary with the index as well
-    //     // .attr("fill", (d, i) => d3.hsl((step * Math.sqrt(i += 0.5)) % 50, 10, 255))
-    //     .attr("r", d => scaleYears(d.date.getFullYear()))
-    //     // .attr("cx", d => d.x)
-    //     // .attr("cy", d => d.y)
-    //     .attr("cx", d => {
-    //         // let thisYear = d.date.getFullYear()
-    //         // yearScales[thisYear].x(allYears[thisYear])
-    //     })
-    //     .attr("cy", d => d.y)
-
-    // // console.log(allYears)
-
-    // tippy(allCircles.nodes(), {
-    //     inertia: true,
-    //     animateFill: true,
-    //     offset: [0, 20]
-    // })
-
-    // svg.call(d3.zoom()
-    //     .extent([
-    //         [0, 0],
-    //         [width, height]
-    //     ])
-    //     .scaleExtent([1, 8])
-    //     .on("zoom", zoomed));
-
-    // function zoomed({
-    //     transform
-    // }) {
-    //     g.attr("transform", transform);
-    // }
-
-
-
-
-
-
 
     // Legend
     // ref: https://bl.ocks.org/jkeohan/b8a3a9510036e40d3a4e
 
-    const legendC = svg.append('g')
+    let legendC = svg.append('g')
         .attr('class', 'legend')
+        .attr('transform', `translate (${m.left}, ${m.top/2})`)
 
 
     let dataL = 0;
-    let offset = 40;
+    let offset = 30;
 
     let legend = legendC.selectAll('.legend')
         .data(uniqueGenres)
@@ -299,8 +254,6 @@ function createChart(rawData) {
         .style("font-weigth", 200)
         .style('fill', 'white')
 
-
-
     legend.attr("transform", function (d, i) {
         let bBoxWidth = d3.select(this)
             .select('text')
@@ -324,28 +277,28 @@ function createChart(rawData) {
 
             legendCircle.attr("opacity", 1)
                 .transition()
-                .duration(750)
+                .duration(tDuration)
                 .attr("opacity", 0.2)
 
             legendText.attr("opacity", 1)
                 .transition()
-                .duration(750)
+                .duration(tDuration)
                 .attr("opacity", y => y[0] == clicked ? 1 : 0.2)
 
             d3.select(this)
                 .transition()
-                .duration(750)
+                .duration(tDuration)
                 .style("cursor", "pointer")
                 .attr("opacity", 1)
                 .attr("r", d => 8)
         })
         .on('mouseout', function () {
             legendCircle.transition()
-                .duration(750)
+                .duration(tDuration)
                 .attr("opacity", 1)
 
             legendText.transition()
-                .duration(750)
+                .duration(tDuration)
                 .attr("opacity", 1)
 
             d3.select(this)
@@ -358,16 +311,17 @@ function createChart(rawData) {
             let clicked = d3.select(this)
                 .data()[0][0]
 
-            legendClick(clicked)
+            d3.selectAll(`[class*="circles"]`)
+                .call(update => update.transition()
+                    .duration(tDuration)
+                    .style("opacity", y => y.genre == clicked ? 1 : 0.2))
 
-            allCircles.attr("opacity", 1)
-                .transition()
-                .duration(1000)
-                .attr("opacity", y => y.genre == clicked ? 1 : 0.2)
+            legendClick(clicked)
         })
 
     function legendClick(catName) {
-        let statsDiv = document.querySelector('#stats')
+
+        let statsDiv = document.querySelector('#legend-stats')
         statsDiv.setAttribute('data-tippy-content', 'close')
         statsDiv.innerHTML = ''
         statsDiv.style.display = 'block'
@@ -382,10 +336,12 @@ function createChart(rawData) {
 
         statsDiv.addEventListener('click', function () {
             this.style.display = 'none'
-            allCircles.attr("opacity", 1)
-                .transition()
-                .duration(1000)
-                .attr("opacity", 1)
+
+            d3.selectAll(`[class*="circles"]`)
+                .call(update => update.transition()
+                    .duration(tDuration)
+                    .style("opacity", 1)
+                )
         })
 
         tippy(statsDiv, {
@@ -394,22 +350,42 @@ function createChart(rawData) {
             followCursor: true,
         })
     }
+
+
 }
 
+function buildDataObject(rawData) {
+    // this function get the raw data parsed and returns a data object
+    // this includes x and y position for the phillotax diagram
 
+    let builtData = rawData.map((item, i) => {
+        const theta = Math.PI * (3 - Math.sqrt(5))
+        const spacing = (5 + (i * 0.0015)) * Math.sqrt(i += 0.5);
+        const a = theta * i;
+        const x = width / 2 + spacing * Math.cos(a);
+        const y = height / 2 + spacing * Math.sin(a);
+        const parsedDate = new Date(item.date)
 
-
-
-
-
-
-
-
-
-
-
+        let obj = {
+            id: Math.floor(i),
+            title: item.title,
+            chapter: item.chapter,
+            date: parsedDate,
+            type: item.type,
+            overview: item.overview,
+            poster: item.poster,
+            genre: item.genre[0],
+            language: item.language,
+            x: x,
+            y: y
+        }
+        return obj
+    })
+    return builtData
+}
 
 function cardBuilder(event, d) {
+    // function to build the modal with the films and series information
 
     let window = document.querySelector('#modal')
     let bg = document.querySelector('.modal-bg')

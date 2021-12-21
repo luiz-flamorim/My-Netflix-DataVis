@@ -36,7 +36,7 @@ p {
     text-align: center;
 }
 
-.legend-category{
+.legend-category {
     margin: auto;
     padding: 1rem;
     font-size: 1.3rem;
@@ -45,13 +45,13 @@ p {
     /* color: white; */
 }
 
-.legend-number{
+.legend-number {
     font-weight: 600;
 }
 
 
 /* CONTAINERS */
-#diagram-container{
+#svg-container {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -74,7 +74,6 @@ p {
 
 #dots {
     border-radius: 0.5rem;
-
     background-color: #15191f;
 }
 
@@ -82,6 +81,44 @@ p {
     height: 2rem;
 }
 
+#buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    gap: 1rem
+}
+
+.btn-text-container {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    width: 20rem;
+    border-style: none;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    background-color: #15191f;
+    color: white;
+}
+
+.btn:hover {
+    cursor: pointer;
+    transition: 1s;
+    color: grey;
+    background-color: black;
+
+}
+
+.p-small {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 200;
+}
 
 /* MODAL */
 .modal-bg {
@@ -145,6 +182,7 @@ p {
     font-weight: 200;
     opacity: 30%;
 }
+
 /* Pop Up text and elements */
 
 .poster {
@@ -162,7 +200,7 @@ p {
     font-size: 2.5rem;
     line-height: 2.5rem;
     font-weight: 600;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .film-episode {

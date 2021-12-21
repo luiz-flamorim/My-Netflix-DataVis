@@ -24,25 +24,40 @@
         <h1>
             My Netflix visualisation
         </h1>
-        <p>The diagram below is an experiment to visualise my user Netflix data since 2012, where each circle represents one film or serie I have watched. You can explore it by
-            zooming on different areas using the mouse wheel, or by clicking on the different circles, colours and buttons. All the information about the films and series can
+        <p>The diagram below is an experiment to visualise my user Netflix data since 2012, where each circle represents
+            one film or serie I have watched. You can explore it by
+            zooming on different areas using the mouse wheel, or by clicking on the different circles, colours and
+            buttons. All the information about the films and series can
             be found on <a href="http://tmdb.org" target="_blank">The Movie Database website</a>.</p>
 
-    <div id="diagram-container">
-        <!-- <svg id="legend"></svg> -->
-        <!-- <div id="stats"></div> -->
-        <svg id="dots"></svg>
-    </div>
+            <div id="stats">
 
-    <div class="modal-bg">
-        <div class="modal" id="modal">
+            </div>
+        <div id="buttons">
+            <div class="btn-text-container">
+                <p class="p-small">Click on the buttons bellow to change the chart type</p>
+            </div>
+            
+            <div class="btn-text-container">
+                <button type="button" id='phillo' class='btn'>Phillotaxis diagram</button>
+                <button type="button" id='bar' class='btn'>Bar diagram</button>
+            </div>
         </div>
-    </div>
 
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="https://unpkg.com/tippy.js@6"></script>
+        <div id="svg-container">
+            <div id="legend-stats"></div>
+            <svg id="dots"></svg>
+        </div>
 
-    <script src="./js/newdots.js"></script>
+        <div class="modal-bg">
+            <div class="modal" id="modal">
+            </div>
+        </div>
+
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <script src="https://unpkg.com/tippy.js@6"></script>
+
+        <script src="./js/newdots.js"></script>
 </body>
 
 </html>
