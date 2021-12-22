@@ -1,8 +1,4 @@
-// TO DO
-// what happens when the user click on a film that doens't have information? address this with a different pop up (?)
-// put some legend about the size of the bubbles - size = date => phillotax
-// phillotaxix to bar chart
-// problem when hover most recent bubbles on bar chart, on mouse out the bubbles come back smaller
+// Add figures to the bar chart
 
 const h = 1000
 const w = 1000
@@ -101,29 +97,48 @@ function createChart(rawData) {
         .domain([0, uniqueGenres.size])
         .interpolator(d3.interpolateCool)
 
+
+    // setup the containers
     let chartContainer = diagramContainer.append('g')
         .attr("class", "chartContainer")
 
-    update('phillo')
+    let barsFigures = svg.append('g')
+        .attr('class', 'bar-figure')
+
+    let chartType = 'phillo'
+
+    update(chartType)
 
     let phillo = document.querySelector('#phillo')
     phillo.addEventListener('click', function () {
-        yearAxis.transition()
-            .duration(tDuration)
-            .style('opacity', 0)
-            .attr("transform", `translate(0,${m.top})`)
-
-        update('phillo')
+        if (chartType != 'phillo') {
+            chartType = 'phillo'
+            yearAxis.transition()
+                .duration(tDuration)
+                .style('opacity', 0)
+                .attr("transform", `translate(0,${m.top})`)
+            update(chartType)
+            phillo.classList.toggle('btn')
+            phillo.classList.toggle('btn-selected')
+            bars.classList.toggle('btn')
+            bars.classList.toggle('btn-selected')
+        }
     })
 
     let bars = document.querySelector('#bar')
     bars.addEventListener('click', function () {
-        yearAxis.transition()
-            .duration(tDuration)
-            .style('opacity', 1)
-            .attr("transform", `translate(${m.left * 1.5},${m.top})`)
-
-        update('bars')
+        if (chartType != 'bars') {
+            chartType = 'bars'
+            yearAxis.transition()
+                .duration(tDuration)
+                .style('opacity', 1)
+                .attr("transform", `translate(${m.left * 1.5},${m.top})`)
+            update(chartType)
+            phillo.classList.toggle('btn')
+            phillo.classList.toggle('btn-selected')
+            bars.classList.toggle('btn')
+            bars.classList.toggle('btn-selected')
+        }
     })
 
 
@@ -145,51 +160,69 @@ function createChart(rawData) {
                     .attr("cy", height / 2)
                     .attr('data-tippy-content', d => d.title)
                     .on("click", cardBuilder)
-                    .on('mouseover', function () {
-                        d3.select(this)
-                            .transition()
-                            .duration(tDuration / 5)
-                            .style("cursor", "pointer")
-                            .attr("r", d => chartType == "bars" ? 8 : scaleYears(d.date.getFullYear()) * 2)
-                    })
-                    .on('mouseout', function () {
-                        d3.select(this)
-                            .transition()
-                            .duration(tDuration / 5)
-                            .style("cursor", "pointer")
-                            .attr("r", d => chartType == "bars" ? 4 : scaleYears(d.date.getFullYear()))
-                    })
+                    .on('mouseover', mouseOver)
+                    .on('mouseout', mouseOut)
+                    .call(chartTransition),
 
-                    .call(enter => enter.transition()
-                        .ease(d3.easeCircle)
-                        .delay((d, i) => i * 3)
-                        .duration(tDuration)
-                        .attr("cx", (d, i) => chartType == "bars" ? xScale(Math.floor(i / gridRows)) : d.x)
-                        .attr("cy", (d, i) => chartType == "bars" ? yScale(i % gridRows) : d.y)
-                        .attr("r", d => chartType == "bars" ? 4 : scaleYears(d.date.getFullYear()))
-                        .style('opacity', 1)
-                    ),
-
-                    update => update
-                    .call(update => update.transition()
-                        .ease(d3.easeCircle)
-                        .delay((d, i) => i * 2)
-                        .duration(tDuration)
-                        .attr("cx", (d, i) => chartType == "bars" ? xScale(Math.floor(i / gridRows)) : d.x)
-                        .attr("cy", (d, i) => chartType == "bars" ? yScale(i % gridRows) : d.y)
-                        .attr("r", d => chartType == "bars" ? 4 : scaleYears(d.date.getFullYear()))
-                        .style('opacity', 1)
-                    ),
+                    update => update.on("click", cardBuilder)
+                    .on('mouseover', mouseOver)
+                    .on('mouseout', mouseOut)
+                    .call(chartTransition),
 
                     exit => exit.remove()
                 )
+
+            function mouseOver() {
+                d3.select(this)
+                    .transition()
+                    .duration(tDuration / 5)
+                    .style("cursor", "pointer")
+                    .attr("r", d => chartType == "bars" ? 8 : scaleYears(d.date.getFullYear()) * 2)
+            }
+
+            function mouseOut() {
+                d3.select(this)
+                    .transition()
+                    .duration(tDuration / 5)
+                    .attr("r", d => chartType == "bars" ? 4 : scaleYears(d.date.getFullYear()))
+            }
+
+            function chartTransition(event) {
+                event.transition()
+                    .ease(d3.easeCircle)
+                    .delay((d, i) => i * 3)
+                    .duration(tDuration)
+                    .attr("cx", (d, i) => chartType == "bars" ? xScale(Math.floor(i / gridRows)) : d.x)
+                    .attr("cy", (d, i) => chartType == "bars" ? yScale(i % gridRows) : d.y)
+                    .attr("r", d => chartType == "bars" ? 4 : scaleYears(d.date.getFullYear()))
+                    .style('opacity', 1)
+            }
+
+
+
+
+            // barsFigures.selectAll('.figure')
+            //     .data(allYears)
+            //     .join(enter => {
+            //         enter.append('text')
+            //             .text(d => d[1].length)
+            //             .style('fill', 'white')
+            //             .attr('transform', function (d, i) {
+            //                 let x = xScale(Math.floor(i / gridRows) + )
+            //                 let y = yScale(i % gridRows)
+            //                 return `translate (${x}, ${y})`
+            //             })
+
+            //     })
         }
+
 
         tippy('[data-tippy-content]', {
             content: 'Global content',
             animateFill: true,
         })
     }
+
 
     // Legend
     // ref: https://bl.ocks.org/jkeohan/b8a3a9510036e40d3a4e
@@ -198,7 +231,6 @@ function createChart(rawData) {
         .attr('class', 'legend')
         .attr('transform', `translate (${m.left}, ${m.top/2})`)
 
-
     let dataL = 0;
     let offset = 30;
 
@@ -206,7 +238,6 @@ function createChart(rawData) {
         .data(uniqueGenres)
         .enter().append('g')
         .attr("class", "legend")
-
 
     let legendCircle = legend.append('circle')
         .attr("cx", 5)
@@ -249,36 +280,37 @@ function createChart(rawData) {
 
             legendCircle.attr("opacity", 1)
                 .transition()
-                .duration(tDuration)
+                .duration(tDuration / 5)
                 .attr("opacity", 0.2)
 
             legendText.attr("opacity", 1)
                 .transition()
-                .duration(tDuration)
+                .duration(tDuration / 5)
                 .attr("opacity", y => y[0] == clicked ? 1 : 0.2)
 
             d3.select(this)
                 .transition()
-                .duration(tDuration)
+                .duration(tDuration / 5)
                 .style("cursor", "pointer")
                 .attr("opacity", 1)
-                .attr("r", d => chartType == "bars" ? 8 : scaleYears(d.date.getFullYear()) * 2)
+                .attr("r", 10)
+
 
         })
         .on('mouseout', function () {
             legendCircle.transition()
-                .duration(tDuration)
+                .duration(tDuration / 5)
                 .attr("opacity", 1)
 
             legendText.transition()
-                .duration(tDuration)
+                .duration(tDuration / 5)
                 .attr("opacity", 1)
 
             d3.select(this)
                 .transition()
-                .duration(100)
-                .attr("r", d => chartType == "bars" ? 4 : scaleYears(d.date.getFullYear()))
-            })
+                .duration(tDuration / 5)
+                .attr("r", 5)
+        })
         .on('click', function (d, i) {
 
             let clicked = d3.select(this)
@@ -322,6 +354,11 @@ function createChart(rawData) {
             animateFill: true,
             followCursor: true,
         })
+
+        let closeLegend = d3.selectAll('#legend-stats')
+            .append('span')
+            .attr('class', 'close material-icons')
+            .html('cancel')
     }
 
 
