@@ -33,6 +33,8 @@ function createChart(rawData) {
     let allYears = d3.group(dataObject, d => d.date.getFullYear())
     let uniqueYears = Array.from(allYears.keys())
 
+    let yearCount = d3.rollup(dataObject, v => v.length, d => d.date.getFullYear())
+
     // scale for years
     let scaleYears = d3.scaleLinear()
         .domain(uniqueYears)
@@ -72,7 +74,13 @@ function createChart(rawData) {
         }
     })
 
-    // set the main SVG
+    // Scale for the Horizontal figures on bar chart
+    let barHscale = d3.scaleLinear()
+        .domain([0, 444])
+        .range([m.left, width - m.right])
+
+
+    // Set the main SVG
     const svg = d3.select('#dots')
         .attr("viewBox", [0, 0, w, h]);
 
@@ -97,7 +105,6 @@ function createChart(rawData) {
         .domain([0, uniqueGenres.size])
         .interpolator(d3.interpolateCool)
 
-
     // setup the containers
     let chartContainer = diagramContainer.append('g')
         .attr("class", "chartContainer")
@@ -117,11 +124,14 @@ function createChart(rawData) {
                 .duration(tDuration)
                 .style('opacity', 0)
                 .attr("transform", `translate(0,${m.top})`)
-            update(chartType)
+
             phillo.classList.toggle('btn')
             phillo.classList.toggle('btn-selected')
             bars.classList.toggle('btn')
             bars.classList.toggle('btn-selected')
+
+            update(chartType)
+            updateBarFigures(chartType)
         }
     })
 
@@ -133,11 +143,14 @@ function createChart(rawData) {
                 .duration(tDuration)
                 .style('opacity', 1)
                 .attr("transform", `translate(${m.left * 1.5},${m.top})`)
-            update(chartType)
+
             phillo.classList.toggle('btn')
             phillo.classList.toggle('btn-selected')
             bars.classList.toggle('btn')
             bars.classList.toggle('btn-selected')
+
+            update(chartType)
+            updateBarFigures(chartType)
         }
     })
 
@@ -197,30 +210,45 @@ function createChart(rawData) {
                     .attr("r", d => chartType == "bars" ? 4 : scaleYears(d.date.getFullYear()))
                     .style('opacity', 1)
             }
-
-
-
-
-            // barsFigures.selectAll('.figure')
-            //     .data(allYears)
-            //     .join(enter => {
-            //         enter.append('text')
-            //             .text(d => d[1].length)
-            //             .style('fill', 'white')
-            //             .attr('transform', function (d, i) {
-            //                 let x = xScale(Math.floor(i / gridRows) + )
-            //                 let y = yScale(i % gridRows)
-            //                 return `translate (${x}, ${y})`
-            //             })
-
-            //     })
         }
-
 
         tippy('[data-tippy-content]', {
             content: 'Global content',
             animateFill: true,
         })
+    }
+
+    function updateBarFigures() {
+
+        barsFigures.selectAll(`.year-figure`)
+            .data(yearCount, d => d.id)
+            .join(enter => {
+                enter.append('text')
+                .attr('class',`year-figure`)
+                .attr('id',d => `year-figure-${d[0]}`)
+                    .text(d => d[1])
+                    .style('font-size', 25)
+                    .style('fill', 'white')
+                    .attr('x', d => barHscale(d[1]))
+                    .style('opacity', 0)
+                    .attr('y', d => yearBand(d[0]) + 75)
+                    .call(barFigureTransition),
+
+                    update => update.call(barFigureTransition),
+
+                    exit => exit.remove()
+            })
+    }
+
+    function barFigureTransition(event) {
+        event.transition()
+            .duration(tDuration)
+            .ease(d3.easeCircle)
+            .delay(tDuration * 1.8)
+            .style('opacity', chartType == "bars" ? 1 : 0)
+            .attr('x', d => chartType == "bars" ? barHscale(d[1]) + 50 : barHscale(d[1]))
+
+        console.log(chartType)
     }
 
 
