@@ -218,7 +218,7 @@ function createChart(rawData) {
         })
     }
 
-    function updateBarFigures() {
+    function updateBarFigures(chartType) {
 
         barsFigures.selectAll(`text`)
             .data(yearCount, d => d.id)
