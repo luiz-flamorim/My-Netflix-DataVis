@@ -76,7 +76,6 @@ p {
     font-weight: 600;
 }
 
-
 /* CONTAINERS */
 #svg-container {
     position: relative;
@@ -101,7 +100,6 @@ p {
 
 #dots {
     border-radius: 0.5rem;
-    background-color: #15191f;
 }
 
 #legend {

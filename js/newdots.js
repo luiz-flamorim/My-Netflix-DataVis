@@ -1,6 +1,6 @@
 // Add figures to the bar chart
 
-const h = 1000
+const h = 900
 const w = 1000
 const m = {
     top: 30,
@@ -18,7 +18,7 @@ let tDuration = 750
 
 let chartContainer = d3.select('#svg-container')
     .style('width', '1000px')
-    .style('height', '1000px')
+    .style('height', '900px')
 
 d3.json('js/results.json')
     .then(data => {
@@ -220,24 +220,24 @@ function createChart(rawData) {
 
     function updateBarFigures() {
 
-        barsFigures.selectAll(`.year-figure`)
+        barsFigures.selectAll(`text`)
             .data(yearCount, d => d.id)
-            .join(enter => {
+            .join(enter =>
                 enter.append('text')
-                .attr('class',`year-figure`)
-                .attr('id',d => `year-figure-${d[0]}`)
-                    .text(d => d[1])
-                    .style('font-size', 25)
-                    .style('fill', 'white')
-                    .attr('x', d => barHscale(d[1]))
-                    .style('opacity', 0)
-                    .attr('y', d => yearBand(d[0]) + 75)
-                    .call(barFigureTransition),
+                .attr('class', `year-figure`)
+                .attr('id', d => `year-figure-${d[0]}`)
+                .attr('x', d => barHscale(d[1]))
+                .attr('y', d => yearBand(d[0]) + 75)
+                .text(d => d[1])
+                .style('font-size', 20)
+                .style('fill', 'white')
+                .style('opacity', 0)
+                .call(barFigureTransition),
 
-                    update => update.call(barFigureTransition),
+                update => update.call(barFigureTransition),
 
-                    exit => exit.remove()
-            })
+                exit => exit.remove()
+            )
     }
 
     function barFigureTransition(event) {
@@ -245,10 +245,8 @@ function createChart(rawData) {
             .duration(tDuration)
             .ease(d3.easeCircle)
             .delay(tDuration * 1.8)
+            .attr('x', d => chartType == "bars" ? barHscale(d[1]) + 35 : barHscale(d[1]))
             .style('opacity', chartType == "bars" ? 1 : 0)
-            .attr('x', d => chartType == "bars" ? barHscale(d[1]) + 50 : barHscale(d[1]))
-
-        console.log(chartType)
     }
 
 
