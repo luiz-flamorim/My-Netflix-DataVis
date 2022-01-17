@@ -1,4 +1,4 @@
-const dataset = 'data/results2.json'
+const dataset = 'data/results.json'
 
 const h = 1000
 const w = 1000
