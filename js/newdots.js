@@ -1,6 +1,6 @@
-// Add figures to the bar chart
+const dataset = 'data/results2.json'
 
-const h = 900
+const h = 1000
 const w = 1000
 const m = {
     top: 30,
@@ -12,15 +12,16 @@ const m = {
 const width = w - (m.left + m.right)
 const height = h - (m.top + m.bottom)
 
-let gridRows = 6
-let gridLines = 74
+let gridRows = 8
+let gridLines = 83
 let tDuration = 750
+let circleRadius = 3
 
 let chartContainer = d3.select('#svg-container')
     .style('width', '1000px')
     .style('height', '900px')
 
-d3.json('js/results.json')
+d3.json(dataset)
     .then(data => {
         createChart(data)
     })
@@ -75,8 +76,9 @@ function createChart(rawData) {
     })
 
     // Scale for the Horizontal figures on bar chart
+    let yearCountMax = d3.max(Array.from(yearCount.values()))
     let barHscale = d3.scaleLinear()
-        .domain([0, 444])
+        .domain([0, yearCountMax])
         .range([m.left, width - m.right])
 
 
@@ -190,14 +192,14 @@ function createChart(rawData) {
                     .transition()
                     .duration(tDuration / 5)
                     .style("cursor", "pointer")
-                    .attr("r", d => chartType == "bars" ? 8 : scaleYears(d.date.getFullYear()) * 2)
+                    .attr("r", d => chartType == "bars" ? circleRadius * 2 : scaleYears(d.date.getFullYear()) * 2)
             }
 
             function mouseOut() {
                 d3.select(this)
                     .transition()
                     .duration(tDuration / 5)
-                    .attr("r", d => chartType == "bars" ? 4 : scaleYears(d.date.getFullYear()))
+                    .attr("r", d => chartType == "bars" ? circleRadius : scaleYears(d.date.getFullYear()))
             }
 
             function chartTransition(event) {
@@ -207,7 +209,7 @@ function createChart(rawData) {
                     .duration(tDuration)
                     .attr("cx", (d, i) => chartType == "bars" ? xScale(Math.floor(i / gridRows)) : d.x)
                     .attr("cy", (d, i) => chartType == "bars" ? yScale(i % gridRows) : d.y)
-                    .attr("r", d => chartType == "bars" ? 4 : scaleYears(d.date.getFullYear()))
+                    .attr("r", d => chartType == "bars" ? circleRadius : scaleYears(d.date.getFullYear()))
                     .style('opacity', 1)
             }
         }
@@ -226,7 +228,7 @@ function createChart(rawData) {
                 enter.append('text')
                 .attr('class', `year-figure`)
                 .attr('id', d => `year-figure-${d[0]}`)
-                .attr('x', d => barHscale(d[1]))
+                .attr('x', d => barHscale(d[1]) - 50)
                 .attr('y', d => yearBand(d[0]) + 75)
                 .text(d => d[1])
                 .style('font-size', 20)
@@ -242,10 +244,9 @@ function createChart(rawData) {
 
     function barFigureTransition(event) {
         event.transition()
+        .ease(d3.easeCircle)
             .duration(tDuration)
-            .ease(d3.easeCircle)
-            .delay(tDuration * 1.8)
-            .attr('x', d => chartType == "bars" ? barHscale(d[1]) + 35 : barHscale(d[1]))
+            .attr('x', d => chartType == "bars" ? barHscale(d[1]) + 35 : barHscale(d[1]) - 50)
             .style('opacity', chartType == "bars" ? 1 : 0)
     }
 
@@ -410,7 +411,7 @@ function buildDataObject(rawData) {
             type: item.type,
             overview: item.overview,
             poster: item.poster,
-            genre: item.genre[0],
+            genre: item.genre,
             language: item.language,
             x: x,
             y: y
