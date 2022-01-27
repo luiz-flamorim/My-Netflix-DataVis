@@ -13,9 +13,9 @@ const width = w - (m.left + m.right)
 const height = h - (m.top + m.bottom)
 
 let gridRows = 8
-let gridLines = 83
+let gridLines = 90
 let tDuration = 750
-let circleRadius = 3
+let circleRadius = 2.8
 
 let chartContainer = d3.select('#svg-container')
     .style('width', '1000px')
@@ -423,7 +423,6 @@ function buildDataObject(rawData) {
 
 function cardBuilder(event, d) {
     // function to build the modal with the films and series information
-
     let window = document.querySelector('#modal')
     let bg = document.querySelector('.modal-bg')
 
@@ -451,15 +450,23 @@ function cardBuilder(event, d) {
         bg.classList.remove('bg-active')
     })
 
-    let filmTitle = document.createElement('h1')
+    let filmTitle = document.createElement('p')
     filmTitle.innerHTML = d.title
     filmTitle.setAttribute('class', 'film-title')
     contentDiv.appendChild(filmTitle)
 
     let episode = document.createElement('h2');
-    episode.innerHTML = d.chapter
+    episode.innerHTML = `Episode: ${d.chapter}`
+    if(d.chapter == 'Not available'){
+        episode.innerHTML = ''
+    }
     episode.setAttribute('class', 'film-episode')
     contentDiv.appendChild(episode);
+
+    let dateWatched = document.createElement('p');
+    dateWatched.setAttribute('class', 'film-date')
+    dateWatched.innerHTML = `Watched on ${new Date(d.date).toLocaleDateString()}`
+    contentDiv.appendChild(dateWatched);
 
     let filmOverview = document.createElement('p');
     filmOverview.setAttribute('class', 'film-overview')
